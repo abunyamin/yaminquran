@@ -1,0 +1,89 @@
+
+                {showData ? showData.filter((value) => value.ayat == list.nomor && value.surat == list.surah) ? showData.filter((value) => value.ayat == list.nomor && value.surat == list.surah).map(() => 
+<RiBookmarkFill />) : <span onClick={() => 
+                {
+
+              // localStorage.setItem('bookmark', JSON.stringify([...showData,saveBook]))
+              localStorage.setItem("bookmark", JSON.stringify([...JSON.parse(localStorage.getItem("bookmark") || "[]"), { surat: list.surah, ayat: list.nomor}]));
+                
+              console.table('Data', showData)
+
+              console.log('Berhasil dibookmark')
+              forceUpdate()
+            
+            }}>
+                  <RiBookmarkLine />
+                </span> : <span onClick={() => 
+                {
+
+              // localStorage.setItem('bookmark', JSON.stringify([...showData,saveBook]))
+              localStorage.setItem("bookmark", JSON.stringify([...JSON.parse(localStorage.getItem("bookmark") || "[]"), { surat: list.surah, ayat: list.nomor}]));
+                
+              console.table('Data', showData)
+
+              console.log('Berhasil dibookmark')
+              forceUpdate()
+            
+            }}>
+                  <RiBookmarkLine />
+                </span> }
+
+
+
+----------------------------------------------------------------------------------------------------------------
+
+                const klik = `<span onClick={() => 
+                {
+
+              // localStorage.setItem('bookmark', JSON.stringify([...showData,saveBook]))
+              localStorage.setItem("bookmark", JSON.stringify([...JSON.parse(localStorage.getItem("bookmark") || "[]"), { surat: list.surah, ayat: list.nomor}]));
+                
+              console.table('Data', showData)
+
+              console.log('Berhasil dibookmark')
+              forceUpdate()
+            
+            }}>
+                  <RiBookmarkLine />
+                </span>`
+
+
+
+                {showData.filter((value) => value.ayat == list.nomor && value.surat == list.surah) ? showData.filter((value) => value.ayat == list.nomor && value.surat == list.surah).map(() => 
+<RiBookmarkFill />) : klik}
+
+------------------------------------------------------------------------------------------------------------------
+
+{showData.filter((value) => value.ayat == list.nomor && value.surat == list.surah ? <span><RiBookmarkFill /></span> : 
+<span onClick={() => 
+  {
+
+// localStorage.setItem('bookmark', JSON.stringify([...showData,saveBook]))
+localStorage.setItem("bookmark", JSON.stringify([...JSON.parse(localStorage.getItem("bookmark") || "[]"), { surat: list.surah, ayat: list.nomor}]));
+  
+console.table('Data', showData)
+
+console.log('Berhasil dibookmark')
+forceUpdate()
+
+}}>
+    <RiBookmarkLine />
+  </span>
+)}
+
+----------------------------------------------------------------------------------------------------------
+
+<span onClick={
+   () => 
+  { 
+   setIndex(showData.findIndex(item => item.ayat === list.nomor && item.namaSurat === surat.nama_latin && item.noSurat === list.surah))
+   
+   console.log(index)
+
+   showData.splice(index, 1);
+
+  //  localStorage.setItem("bookmark", JSON.stringify(showData));
+   forceUpdate()
+   console.table('Data Hapus', index) 
+
+  }}><RiBookmarkFill /></span> 

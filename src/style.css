@@ -1,0 +1,564 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+#root {
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding: 0px 24px 45px;
+  height: 100%;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 45px;
+  padding-bottom: 24px;
+  background-color: #ffffff;
+}
+
+.navRight {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topIcon {
+  display: grid;
+  justify-self: center;
+}
+
+.topIcon:hover,
+.searchIcon:hover {
+  transform: scale(1.2);
+}
+.topIcon svg {
+  width: 24px;
+  height: 24px;
+  color: #8789a3;
+  cursor: pointer;
+}
+
+.navRight .topTitle span {
+  color: #672cbc;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.topSearch form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topSearch .searchIcon svg {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.searchIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  padding: 8px 4px;
+  background-color: #863ed5;
+}
+
+.searchIcon:hover {
+  background-color: #672cbc;
+}
+
+#inputAyat {
+  height: 40px;
+  max-width: 85px;
+  border-radius: 8px;
+  border: 1px solid #672cbc;
+  padding: 8px 4px;
+}
+
+#inputSurat {
+  height: 40px;
+  max-width: 150px;
+  border-radius: 8px;
+  border: 1px solid #672cbc;
+  padding: 8px 16px;
+}
+#suratSearch option {
+  max-width: 150px;
+}
+
+#inputSurat:focus,
+#inputAyat:focus {
+  outline: 2px solid #863ed5;
+}
+/* End Header */
+
+/* Greeting and Last Read */
+.greet {
+  margin: 24px 0;
+}
+
+.greet span {
+  color: #8789a3;
+  opacity: 80%;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: medium;
+}
+
+.greet h2 {
+  height: 36px;
+  color: #240f4f;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.lastRead {
+  height: 131px;
+  background: linear-gradient(
+    137deg,
+    rgba(223, 152, 250, 1) 35%,
+    rgba(144, 85, 255, 1) 100%
+  );
+  border-radius: 8px;
+  padding: 20px 19px;
+  color: #fff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.lastRead a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.lastRead a:hover {
+  color: #863ed5;
+}
+
+.lastRead h2 {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 600;
+}
+
+.lastRead span {
+  font-size: 14px;
+  line-height: 21px;
+  opacity: 80%;
+}
+
+.lastReadHead {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.lastReadHead span {
+  font-size: 14px;
+  line-height: 21px;
+}
+/* End Last Read dan Greeting */
+
+/* Footer */
+footer {
+  background-color: #fff;
+  bottom: 0px;
+  z-index: 9999;
+  position: fixed;
+  height: 80px;
+  width: 100vw;
+  margin: 0 auto;
+  box-shadow: 0px -4px 16px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuBottom {
+  width: 100vw;
+  height: 32px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menuBottom span {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  flex: 1;
+}
+
+.menuBottom span svg {
+  color: #8789a3;
+  font-size: 2em;
+  height: 24px;
+  width: 24px;
+}
+/* End Footer */
+
+/* List Surah */
+.listSurah {
+  height: 356px;
+  margin-top: 24px;
+  margin-bottom: 31px;
+}
+
+.listSurah a {
+  text-decoration: none;
+}
+
+.headListSurah {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid rgba(135, 137, 163, 0.1);
+}
+
+.headListSurah span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8789a3;
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 83px;
+}
+
+.headListSurah span.active {
+  font-size: 16px;
+  color: #672cbc;
+  font-weight: 600;
+  border-bottom: 3px solid #672cbc;
+}
+
+.surahList {
+  overflow: scroll;
+  max-height: 100vh;
+  padding-bottom: 81px;
+}
+
+.surah {
+  height: 62px;
+  border-bottom: 1px solid rgba(135, 137, 163, 0.35);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.surah:hover {
+  background-color: rgba(134, 62, 213, 0.05);
+}
+
+.surah span {
+  font-family: 'Amiri', serif;
+  font-size: 20px;
+  line-height: 35px;
+  text-align: right;
+  color: #863ed5;
+}
+
+.surahIn {
+  display: flex;
+  gap: 16px;
+}
+
+.numbSurah {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  justify-self: center;
+  align-self: center;
+}
+
+.surahTitle h2 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #240f4f;
+  font-weight: 500;
+}
+
+.surahTitle span {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #8789a3;
+}
+
+.surahTitle span::first-letter {
+  text-transform: uppercase;
+}
+
+/* End List Surah */
+
+/* Card */
+.card {
+  height: 265px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(
+      135deg,
+      hsla(283, 91%, 79%, 0.8) 20%,
+      hsla(261, 100%, 67%, 0.8) 67%
+    ),
+    url('https://i.ibb.co/gT83qTv/quran.jpg');
+  object-fit: contain;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  padding: 29px 57px;
+}
+
+.cardIn {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .cardIn .cardHead {
+  text-align: center;
+  margin-bottom: 32px;
+  height: 120;
+}
+
+.card .cardIn .cardHead .surahTitle {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  padding-bottom: 16px;
+}
+
+.card .cardIn .cardHead .surahTitle h2 {
+  color: #fff;
+  font-size: 26px;
+  line-height: 39px;
+}
+
+.card .cardIn .cardHead .surahTitle span {
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.card .cardIn .cardHead .surahTitle .audio {
+  height: 40px;
+  width: 100%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.surahTitle .audio svg {
+  width: 40px;
+  height: 40px;
+  filter: grayscale(1) invert(1);
+}
+
+.card .cardIn .cardHead span {
+  display: block;
+  font-size: 14px;
+  line-height: 21px;
+  color: #fff;
+  margin-top: 16px;
+}
+
+.card .cardIn .cardHead span::first-letter {
+  text-transform: uppercase;
+}
+
+.card .first {
+  height: 48px;
+  text-align: center;
+}
+
+.card .first img {
+  height: 100%;
+  width: auto;
+  stroke: #fff;
+  filter: grayscale(1) invert(1);
+}
+
+.mp3 {
+  display: none;
+}
+/* End Card */
+
+/* List Ayat */
+.listAyat {
+  margin-top: 32px;
+  padding-bottom: 32px;
+}
+
+.ayatItem {
+  margin-bottom: 24px;
+}
+
+.listAyat .headAyat {
+  height: 47px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(134, 62, 213, 0.05);
+  border-radius: 10px;
+  padding: 10px 13px;
+}
+
+.listAyat .headAyat .numbAyat {
+  width: 27px;
+  height: 27px;
+  background-color: #863ed5;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listAyat .headAyat .more {
+  display: flex;
+  gap: 16px;
+}
+
+.listAyat .headAyat .more svg {
+  width: 24px;
+  height: 24px;
+  color: #863ed5;
+}
+
+.listAyat .headAyat .more svg:hover {
+  fill: #863ed5;
+}
+
+.listAyat .headAyat .more span {
+  cursor: pointer;
+}
+
+.listAyat .headAyat .more span:hover {
+  transform: scale(1.05);
+}
+
+.listAyat .ayatRead {
+  margin-top: 24px;
+}
+
+.listAyat .ayatRead .ayat {
+  font-family: 'Amiri', serif;
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 45px;
+}
+
+.listAyat .ayatRead .tr {
+  color: #240f4f;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  margin: 16px 0px;
+}
+
+.up {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: #863ed5;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.up:hover {
+  outline: 4px solid rgba(134, 62, 213, 0.62);
+  outline-offset: 3px;
+}
+.up svg {
+  width: 32px;
+  height: 32px;
+}
+/* End List Ayat */
+
+/* Breakpoint for Mobile Max 360x634 */
+@media (max-width: 360px) and (max-height: 634px) {
+  .container {
+    padding: 0px 24px 45px;
+  }
+
+  #inputSurat {
+    max-width: 120px;
+  }
+
+  #inputAyat {
+    max-width: 70px;
+  }
+  .lastRead {
+    height: 100px;
+    padding: 10px 19px;
+  }
+
+  .lastRead h2 {
+    margin-top: 5px;
+  }
+
+  .greet {
+    margin: 14px 0;
+  }
+  .greet span {
+    font-size: 14px;
+  }
+
+  .greet h2 {
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .headListSurah {
+    height: 40px;
+  }
+
+  .listSurah {
+    height: 356px;
+    margin-top: 10px;
+    margin-bottom: 31px;
+  }
+
+  footer {
+    height: 65px;
+  }
+}
