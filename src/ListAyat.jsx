@@ -10,6 +10,7 @@ import {
 import { useLocation } from "react-router-dom";
 import GetApi from "./GetApi";
 import Loading from "./Loading";
+import BookmarkDelete from './BookmarkDelete'
 import useForceUpdate from "use-force-update";
 
 function ListAyat(props) {
@@ -17,14 +18,10 @@ function ListAyat(props) {
   const showData = JSON.parse(localStorage.getItem("bookmark")) || null;
   const lastRead = JSON.parse(localStorage.getItem("lastread")) || null;
 
-  const [saveAyat, setSaveAyat] = useState([]);
-  const [saveBook, setSaveBook] = useState([]);
-
-  const [index, setIndex] = useState(saveBook);
-
-  const [ayats, setAyats] = useState([]);
-  const [ayatSurah, setAyatSurah] = useState([]);
   const { ayat, surat, loading } = props;
+  const [isNotif, setIsNotif] = useState(false);
+  const [notifDetail, setNotifDetail] = useState([])
+
   const forceUpdate = useForceUpdate();
 
 
@@ -68,8 +65,6 @@ function ListAyat(props) {
     removeHash()
   }
   
-  console.log('jumlah ayat')
-  
     if (!loading && location.hash.includes('#lastread') == true) {
       setTimeout(() => handleLastRead(), 500);
     } else if (!loading && location.hash.includes('#search-') == true){
@@ -83,6 +78,7 @@ function ListAyat(props) {
   return (
     <>
       <div className="listAyat">
+      {isNotif && <BookmarkDelete notif={!isNotif} detail={...notifDetail} setIsNotif={setIsNotif} />}
         {loading ? (
           <Loading />
         ) : (
@@ -156,23 +152,14 @@ function ListAyat(props) {
                       ).length > 0 ? (
                         // Button Saved & Delete Execution
 
-                        <span
-                          onClick={() => {
-                            // setIndex(function(){ showData.filter(item =>  item.ayat != list.nomor || item.noSurat != list.surah)})
-
-                            localStorage.setItem(
-                              "bookmark",
-                              JSON.stringify(
-                                showData.filter(
-                                  (item) =>
-                                    item.ayat != list.nomor ||
-                                    item.noSurat != list.surah
-                                )
-                              )
-                            );
-
-                            forceUpdate();
-                            console.table("Data Hapus", index);
+                        <span onClick={()=> {
+                          setIsNotif(true)
+                          setNotifDetail([
+                            {surah: list.surah,
+                            nama_latin: list.nama_latin,
+                            nomor: list.nomor,
+                            }
+                          ])
                           }}
                         >
                           <RiBookmarkFill />
@@ -192,6 +179,8 @@ function ListAyat(props) {
                                   noSurat: list.surah,
                                   namaSurat: surat.nama_latin,
                                   ayat: list.nomor,
+                                  arab: list.ar,
+                                  idn: list.idn
                                 },
                               ])
                             );
@@ -220,6 +209,8 @@ function ListAyat(props) {
                                 noSurat: list.surah,
                                 namaSurat: surat.nama_latin,
                                 ayat: list.nomor,
+                                arab: list.ar,
+                                idn: list.idn
                               },
                             ])
                           );

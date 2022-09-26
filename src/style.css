@@ -514,6 +514,58 @@ footer {
 }
 /* End List Ayat */
 
+/* Bookmark Delete */
+
+.notifDelete {
+  position: fixed;
+  height: 100vh;
+  background-color: rgba(169, 169, 169, 0.4);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notifDeleteBody {
+  background-color: #ffffff;
+  height: 150px;
+  width: 200px;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.notifFooter {
+  padding-top: 10px;
+  border-top: 2px solid #8789a3a4;
+  display: flex;
+  justify-content: space-between;
+}
+
+.notifFooter .buttonDelete {
+  background-color: #863ed5;
+  padding: 6px 16px;
+  text-align: center;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.notifFooter .buttonClose {
+  background-color: salmon;
+  padding: 6px 16px;
+  text-align: center;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+}
+/* End Bookmark Delete */
+
 /* Breakpoint for Mobile Max 360x634 */
 @media (max-width: 360px) and (max-height: 634px) {
   .container {
