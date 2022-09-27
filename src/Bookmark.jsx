@@ -34,7 +34,7 @@ function Bookmark() {
                 }}><RiDeleteBin6Line /></span>
 
                 <span>
-                  <Link to={`/${ayat.noSurat}#bookmark-${ayat.ayat}`}>
+                  <Link to={`/${ayat.noSurat}#search-${ayat.ayat}`}>
                     <RiLoginBoxLine />
                   </Link>
                 </span>

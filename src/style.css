@@ -555,6 +555,7 @@ color: #672cbc;
 .notifFooter .buttonDelete {
   background-color: #863ed5;
   padding: 8px 24px;
+  width: 80px;
   text-align: center;
   border: 0;
   border-radius: 8px;
@@ -567,6 +568,7 @@ color: #672cbc;
 .notifFooter .buttonClose {
   background-color: salmon;
   padding: 8px 24px;
+  width: 80px;
   text-align: center;
   border: 0;
   border-radius: 8px;
