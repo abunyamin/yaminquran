@@ -85,7 +85,7 @@ function ListAyat(props) {
         </title>
       </Helmet>
       <div className="listAyat">
-      {isNotif && <BookmarkDelete notif={!isNotif} detail={...notifDetail} setIsNotif={setIsNotif} />}
+      {isNotif && <BookmarkDelete notif={!isNotif} detail={notifDetail} setIsNotif={setIsNotif} />}
         {loading ? (
           <Loading />
         ) : (
