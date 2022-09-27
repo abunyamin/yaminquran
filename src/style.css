@@ -355,14 +355,13 @@ footer {
   padding: 29px 57px;
 }
 
-.cardIn {
-  display: flex;
-  flex-direction: column;
-}
 
 .card .cardIn .cardHead {
   text-align: center;
   height: 120;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .card .cardIn .cardHead .surahTitle {
@@ -400,7 +399,6 @@ footer {
   font-size: 14px;
   line-height: 21px;
   color: #fff;
-  margin: 16px 0;
 }
 
 .card .cardIn .cardHead span::first-letter {
