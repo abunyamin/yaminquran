@@ -1,6 +1,6 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RiSearchLine, RiMenu2Fill, RiArrowLeftLine } from 'react-icons/ri';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SurahApi from './SurahApi';
 
 function Top(props) {
@@ -11,6 +11,7 @@ function Top(props) {
   const [suratId, setSuratId] = useState(1);
   const [ayatId, setAyatId] = useState(1);
   const [selectSurat, setSelectSurat] = useState(false);
+  const [selectAyat, setSelectAyat] = useState(false);
 
   const navigate = useNavigate();
 
@@ -30,40 +31,65 @@ function Top(props) {
     event.preventDefault();
     setSearchButton(true);
 
-    if (pathName == suratId || pathName >= 1) {
-      const ayat = ayatId > parseInt(jumlah) ? parseInt(jumlah) : ayatId;
+    const ayat = ayatId > parseInt(jumlah) ? parseInt(jumlah) : ayatId < 1 ? 1 : ayatId;
+
+    if (pathName == suratId || pathName >= 1) {     
       document
         .getElementById(ayat)
         .scrollIntoView({ behavior: 'smooth', block: 'center' });
       window.location.href.split('#')[0];
-    } else if (searchButton) {
-      navigate(`/${suratId}#search-${ayatId}`);
+      setSearchButton(false);
+
+    }else{
+      if (selectSurat && !selectAyat) {
+      document.getElementById('inputAyat').focus()
+    }else if (searchButton && !selectSurat){
+      document.getElementById('inputSurat').focus()
+    }else if (selectSurat && selectAyat){
+      navigate(`/${suratId}#search-${ayat}`);
+      setSearchButton(false);
+      setSelectSurat(false);
+      setSelectAyat(false)
     }
+  }
   };
+
+  console.log('select surat', selectSurat)
+  console.log('select ayat', selectAyat)
+  console.log('Button', searchButton)
 
   const suratHandler = (event) => {
     const listOption = event.target.list.querySelector(
       '[value="' + event.target.value + '"]'
     );
 
-    setSelectSurat(true);
 
     if (listOption) {
       setCountAyat(listOption.dataset.ayat);
+
+      setSelectSurat(true);
 
       if (listOption.dataset.surat) {
         setSuratId(listOption.dataset.surat);
       } else {
         setSuratId(1);
       }
-    } else if (listOption == null) {
+    } else if (!listOption) {
+      setSelectSurat(false);
       setCountAyat(jumlah_ayat);
     }
+
     console.log('list option', listOption);
   };
 
   const ayatHandler = (event) => {
     setAyatId(event.target.value);
+
+    if(event.target.value){
+      setSelectAyat(true);
+    }else{
+      setSelectAyat(false);
+    }
   };
 
   let ayatids = [];
@@ -97,8 +123,6 @@ function Top(props) {
     });
   }, []);
 
-  console.log('Bookmark', pathName)
-
   return (
     <>
       <header>
@@ -120,14 +144,14 @@ function Top(props) {
           )}
           <div className="topTitle">
             <span>
-              {pathName >= 1 ? nama_surat : !searchButton ? 'YaminQuran' : pathName == 'bookmark' && 'Bookmark'}
+              {pathName >= 1 ? nama_surat : pathName == 'bookmark' ? 'Bookmark' : !searchButton && 'YaminQuran' }
             </span>
           </div>
         </div>
         <div className="topSearch">
           <form>
-            {!pathName >= 1 ? (
-              searchButton ? (
+            {!pathName >= 1 && (
+              searchButton && (
                 <>
                   <input
                     list="suratSearch"
@@ -139,7 +163,7 @@ function Top(props) {
 
                   <datalist id="suratSearch">
                     {surah.map((surat) => (
-                      <option
+                      <option key={surat.nomor}
                         data-surat={surat.nomor}
                         data-ayat={surat.jumlah_ayat}
                         value={surat.nama_latin}
@@ -147,8 +171,8 @@ function Top(props) {
                     ))}
                   </datalist>
                 </>
-              ) : null
-            ) : null}
+              )
+            )}
 
             {selectSurat ? (
               <>
@@ -170,16 +194,15 @@ function Top(props) {
                   list="suratSearchId"
                   id="inputAyat"
                   onChange={ayatHandler}
-                />
+                /> 
                 <datalist id="suratSearchId">
                   {pathName >= 1 ? ayatids2 : ayatids}
                 </datalist>
               </>
             ) : null}
-
-            <button className="searchIcon" onClick={submitHandler}>
+{pathName != 'bookmark' && <button className="searchIcon" onClick={submitHandler}>
               <RiSearchLine />
-            </button>
+            </button> }
           </form>
         </div>
       </header>

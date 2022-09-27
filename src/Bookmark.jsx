@@ -45,7 +45,14 @@ function Bookmark() {
               <div className="tr">{ayat.idn}</div>
             </div>
           </div>
-        )) : 'Selamat Membaca'}
+        )) :  (<>
+          <div className="notBookmark">
+            <div className="headNotBookmark">Tidak ada Data Bookmark</div>
+            <div className="descNotBookmark">
+            <Link to="/"><RiBookmarkLine /> Tambahkan Bookmark</Link>
+            </div>
+          </div>
+          </>)}
       </div>
     </>
   );
