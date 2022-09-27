@@ -20,27 +20,13 @@ const Greet = () => {
     <>
       <div className="greet">
         <h2>
-          {' '}
-          {dateState.toLocaleDateString('en-GB', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric',
-          })}
-        </h2>
-        <span>
-          {dateHijri.toLocaleDateString('ar-TN-u-ca-islamic', {
-            day: 'numeric',
-            month: 'long',
-          })}
-        </span><br />
-        <span style={{textAalign: 'right'}}>
-          {dateState.toLocaleString('en-US', {
+        {dateState.toLocaleString('en-US', {
             hour: 'numeric',
             minute: 'numeric',
             second: 'numeric',
             hour12: true,
           })}
-        </span>
+        </h2>
       </div>
     </>
   );
