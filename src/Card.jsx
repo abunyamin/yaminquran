@@ -52,9 +52,10 @@ return (
             
             </div>
             <span>{surat.tempat_turun} - {surat.jumlah_ayat} Ayat</span>
-          </div>
+            
           <div className="first">
             <img src="https://i.ibb.co/HTBsmgr/bismillah.png" />
+          </div>
           </div>
           </div>
         </div>
