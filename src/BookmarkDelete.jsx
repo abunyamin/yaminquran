@@ -14,7 +14,7 @@ function BookmarkDelete(props, {setIsNotif}) {
       <div className="notifDelete">
         <div className="notifDeleteBody">
       <div className="notifHead">
-        Are you sure want delete ?
+        Apakah anda ingin menghapus ?
         </div>
         <div className="notifDetail">{ayat.nama_latin} ({ayat.surah}) - ayat {ayat.nomor}</div>
       <div className="notifFooter">
@@ -33,8 +33,8 @@ function BookmarkDelete(props, {setIsNotif}) {
                     
                       props.setIsNotif(false)
   
-                    }}>YES</button>
-      <button class="buttonClose" onClick={() => props.setIsNotif(false)}>NO</button>
+                    }}>IYA</button>
+      <button class="buttonClose" onClick={() => props.setIsNotif(false)}>TIDAK</button>
       </div>
     </div>
     </div>
