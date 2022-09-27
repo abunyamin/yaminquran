@@ -531,13 +531,18 @@ footer {
 
 .notifDeleteBody {
   background-color: #ffffff;
-  height: 150px;
-  width: 200px;
+  height: 200px;
+  width: 250px;
   padding: 20px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.notifDetail {
+text-align: center;
+color: #672cbc;
 }
 
 .notifFooter {
@@ -549,20 +554,26 @@ footer {
 
 .notifFooter .buttonDelete {
   background-color: #863ed5;
-  padding: 6px 16px;
+  padding: 8px 24px;
   text-align: center;
   border: 0;
   border-radius: 8px;
   color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
 .notifFooter .buttonClose {
   background-color: salmon;
-  padding: 6px 16px;
+  padding: 8px 24px;
   text-align: center;
   border: 0;
   border-radius: 8px;
   color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 /* End Bookmark Delete */
 

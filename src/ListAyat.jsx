@@ -156,7 +156,7 @@ function ListAyat(props) {
                           setIsNotif(true)
                           setNotifDetail([
                             {surah: list.surah,
-                            nama_latin: list.nama_latin,
+                            nama_latin: surat.nama_latin,
                             nomor: list.nomor,
                             }
                           ])
