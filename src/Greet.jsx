@@ -19,7 +19,6 @@ const Greet = () => {
   return (
     <>
       <div className="greet">
-        <span>Assalamualaikum</span>
         <h2>
           {' '}
           {dateState.toLocaleDateString('en-GB', {
@@ -32,7 +31,6 @@ const Greet = () => {
           {dateHijri.toLocaleDateString('ar-TN-u-ca-islamic', {
             day: 'numeric',
             month: 'long',
-            year: 'numeric',
           })}
         </span><br />
         <span style={{textAalign: 'right'}}>
