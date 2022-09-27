@@ -33,7 +33,7 @@ async componentDidMount() {
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" rel="hoho" />
       <title>
-        Welcome to YaminQur'an
+        Selamat Datang di YaminQur'an
         </title>
       </Helmet>
     <div className="listSurah">
