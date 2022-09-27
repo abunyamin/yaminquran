@@ -514,6 +514,43 @@ footer {
 }
 /* End List Ayat */
 
+/* Bookmark */
+
+.notBookmark {
+  background-color: hsla(261, 100%, 67%, 0.3);
+  border-radius: 10px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headNotBookmark {
+  padding: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.descNotBookmark {
+  text-align: center;
+  background-color: #672cbc;
+  border-radius: 8px;
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.descNotBookmark svg {
+  font-size: 3em;
+}
+
+.notBookmark a {
+  text-decoration: none;
+  color: #ffffff;
+}
 /* Bookmark Delete */
 
 .notifDelete {

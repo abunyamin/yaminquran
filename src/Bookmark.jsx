@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { RiLoginBoxLine, RiDeleteBin6Line } from 'react-icons/ri';
+import { RiLoginBoxLine, RiDeleteBin6Line, RiBookmarkLine } from 'react-icons/ri';
 import GetApi from './GetApi';
 import BookmarkDelete from './BookmarkDelete'
 
 function Bookmark() {
 
-  let datas = JSON.parse(localStorage.getItem('bookmark')) || false;
+  // let datas = JSON.parse(localStorage.getItem('bookmark')) || false;
+
+  let data = JSON.parse(localStorage.getItem('bookmark'))
+  let datas = !data ? false : data == '' ? false : data;
 
   const [isNotif, setIsNotif] = useState(false);
   const [notifDetail, setNotifDetail] = useState([])
@@ -15,6 +18,7 @@ function Bookmark() {
     <>
       <div className="listAyat">
       {isNotif && <BookmarkDelete notif={!isNotif} detail={...notifDetail} setIsNotif={setIsNotif} />}
+      
         {datas ? datas.map((ayat) => (
           <div className="ayatItem" key={ayat.ayat}>
             <div className="headAyat">
@@ -45,12 +49,12 @@ function Bookmark() {
               <div className="tr">{ayat.idn}</div>
             </div>
           </div>
-        )) :  (<>
+        )) : (<>
           <div className="notBookmark">
             <div className="headNotBookmark">Tidak ada Data Bookmark</div>
-            <div className="descNotBookmark">
-            <Link to="/"><RiBookmarkLine /> Tambahkan Bookmark</Link>
-            </div>
+            <Link to="/"><div className="descNotBookmark">
+           <RiBookmarkLine /> <span>Tambah Bookmark</span>
+            </div></Link>
           </div>
           </>)}
       </div>
