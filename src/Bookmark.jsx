@@ -23,8 +23,9 @@ function Bookmark() {
         Bookmark
         </title>
       </Helmet>
+
       <div className="listAyat">
-      {isNotif && <BookmarkDelete notif={!isNotif} detail={...notifDetail} setIsNotif={setIsNotif} />}
+      {isNotif && <BookmarkDelete detail={...notifDetail} setIsNotif={setIsNotif} />}
       
         {datas ? datas.map((ayat) => (
           <div className="ayatItem" key={ayat.ayat}>
