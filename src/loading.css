@@ -15,12 +15,9 @@
 }
 
   .loader--text {
-    position: absolute;
     top: 200%;
-    left: 0;
-    right: 0;
     width: 2rem;
-    margin: auto; }
+    margin: 0 auto; }
     .loader--text:after {
       content: "Loading";
       font-weight: bold;
