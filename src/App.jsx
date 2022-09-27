@@ -15,9 +15,14 @@ import ListAyat from './ListAyat'
 import Footer from './Footer'
 import Card from './Card'
 import Bookmark from './Bookmark'
+import Helmet from 'react-helmet'
 
 export default function App() {
-  
+<Helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+<meta charset="utf-8" />
+  </Helmet>  
+
   const location = useLocation();
   const [suratApi, setSuratApi] = useState();
   const pathName = location.pathname.replace('/','')
