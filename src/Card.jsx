@@ -39,9 +39,10 @@ return (
   src={mp3} volume="0.3" autoPlay showDownloadProgress="true" ref={playAudio}
   onPlay={e => console.log("onPlay")}
 /></div>
- 
-        <div className="card">
-          {!loading && 
+
+{!loading && 
+        <div className="card" id="card">
+
           <div className="cardIn">
           <div className="cardHead">
             <div className="surahTitle"> 
@@ -61,8 +62,9 @@ return (
           <div className="first">
             <img src="https://i.ibb.co/HTBsmgr/bismillah.png" />
           </div>
-          </div> }
+          </div>
         </div>
+      }
       </>
     );
 }

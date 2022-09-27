@@ -109,7 +109,7 @@ function Top(props) {
       if (document.documentElement.scrollTop > 150) {
         div.setAttribute(
           'style',
-          'display: none; position: fixed; left: 0; right: 0; top: 0; padding: 45px 24px 24px; height: 85px; z-index: 99; box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.4);'
+          'display: none; position: fixed; left: 0; right: 0; top: 0; padding: 24px 24px 24px; height: 85px; z-index: 99; box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.4);'
         );
 
         document.addEventListener('dblclick', (event) => {

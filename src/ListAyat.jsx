@@ -26,7 +26,7 @@ function ListAyat(props) {
 
 
   const handleAyat = () => {
-    document.getElementById("1").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("card").scrollIntoView({ behavior: "smooth" });
   };
 
   const removeHash = () => {

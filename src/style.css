@@ -191,7 +191,7 @@ footer {
   height: 80px;
   width: 100vw;
   margin: 0 auto;
-  box-shadow: 0px -4px 16px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px -2px 16px 2px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -502,6 +502,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .up:hover {
@@ -564,6 +565,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
 .notifDeleteBody {
@@ -622,8 +624,12 @@ color: #672cbc;
     padding: 0px 24px 45px;
   }
 
+  header {
+    padding-top: 24px;
+  }
+
   #inputSurat {
-    max-width: 120px;
+    max-width: 130px;
   }
 
   #inputAyat {
