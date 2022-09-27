@@ -68,12 +68,12 @@ function Top(props) {
 
   let ayatids = [];
   for (let i = 1; i <= countAyat; i++) {
-    ayatids.push(<option value={i} />);
+    ayatids.push(<option key={i} value={i} />);
   }
 
   let ayatids2 = [];
   for (let i = 1; i <= jumlah_ayat; i++) {
-    ayatids2.push(<option value={i} />);
+    ayatids2.push(<option key={i} value={i} />);
   }
 
   useEffect(() => {

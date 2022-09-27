@@ -83,7 +83,7 @@ function ListAyat(props) {
           <Loading />
         ) : (
           ayat.map((list) => (
-            <div className="ayatItem" keys={list.nomor} id={list.nomor}>
+            <div className="ayatItem" key={list.nomor} id={list.nomor}>
               <div className="headAyat">
                 <div className="numbAyat">
                   <span>{list.nomor}</span>

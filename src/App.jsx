@@ -20,13 +20,13 @@ export default function App() {
   
   const location = useLocation();
   const [suratApi, setSuratApi] = useState();
-
+  const pathName = location.pathname.replace('/','')
   return (
     <>
     <div className="container">
     <Top />
-    
-    {location.pathname !== "/" ? (<Card/>) : <><Greet /><LastRead/></>}
+    {location.pathName == '/' && <Greet />}
+    {pathName >= 1 && pathName <= 114 ? <Card/> : <LastRead/>}
 
     <Routes> 
       <Route path="/" element={<ListSurah />} />
