@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from "react-router-dom";
 import Loading from './Loading'
+import Helmet from 'react-helmet'
 
 class ListSurah extends Component {
 constructor(props){
@@ -27,6 +28,12 @@ async componentDidMount() {
 
     return(
     <>
+    
+    <Helmet>
+      <title>
+        Welcome to YaminQur'an
+        </title>
+      </Helmet>
     <div className="listSurah">
       <div className="headListSurah">
         <span className="active">Surah</span>

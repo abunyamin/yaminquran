@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { RiLoginBoxLine, RiDeleteBin6Line, RiBookmarkLine } from 'react-icons/ri';
 import GetApi from './GetApi';
 import BookmarkDelete from './BookmarkDelete'
+import Helmet from 'react-helmet'
 
 function Bookmark() {
 
@@ -16,6 +17,12 @@ function Bookmark() {
 
   return (
     <>
+    
+    <Helmet>
+      <title>
+        Bookmark
+        </title>
+      </Helmet>
       <div className="listAyat">
       {isNotif && <BookmarkDelete notif={!isNotif} detail={...notifDetail} setIsNotif={setIsNotif} />}
       

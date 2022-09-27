@@ -13,6 +13,8 @@ import Loading from "./Loading";
 import BookmarkDelete from './BookmarkDelete'
 import useForceUpdate from "use-force-update";
 
+import Helmet from 'react-helmet'
+
 function ListAyat(props) {
   const location = useLocation()
   const showData = JSON.parse(localStorage.getItem("bookmark")) || null;
@@ -77,6 +79,12 @@ function ListAyat(props) {
 
   return (
     <>
+    
+    <Helmet>
+      <title>
+        {surat.nama_latin}
+        </title>
+      </Helmet>
       <div className="listAyat">
       {isNotif && <BookmarkDelete notif={!isNotif} detail={...notifDetail} setIsNotif={setIsNotif} />}
         {loading ? (
