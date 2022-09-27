@@ -23,6 +23,14 @@ const audioPause = () => {
   playAudio.current.audio.current.pause()
 }
 
+
+let card = document.getElementById('card')
+
+  if(!loading && card){
+    console.log(card)
+    card.setAttribute('style', 'animation: bounce 3s ease;')
+  }
+
 const clickPlay = () => {
   setMp3(surat.audio)
 }

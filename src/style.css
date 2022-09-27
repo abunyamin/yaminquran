@@ -341,7 +341,7 @@ footer {
   background-image: linear-gradient(
       135deg,
       hsla(283, 91%, 79%, 0.8) 20%,
-      hsla(261, 100%, 67%, 0.8) 67%
+      hsla(261, 57%, 49%, 0.8) 67%
     ),
     url('https://i.ibb.co/gT83qTv/quran.jpg');
   object-fit: contain;
