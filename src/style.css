@@ -135,7 +135,7 @@ header {
 }
 
 .lastRead {
-  height: 131px;
+  min-height: 131px;
   background: linear-gradient(
     137deg,
     rgba(223, 152, 250, 1) 35%,
@@ -179,6 +179,20 @@ header {
 .lastReadHead span {
   font-size: 14px;
   line-height: 21px;
+}
+
+.lastReadStar {
+  text-align: center;
+}
+
+.lastReadStarHead {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.lastReadStarContain {
+  font-size: 16px;
+  font-weight: 300;
 }
 /* End Last Read dan Greeting */
 
@@ -636,12 +650,20 @@ color: #672cbc;
     max-width: 70px;
   }
   .lastRead {
-    height: 100px;
+    min-height: 100px;
     padding: 10px 19px;
   }
 
   .lastRead h2 {
     margin-top: 5px;
+  }
+
+  .lastReadStarHead {
+    font-size: 16px;
+  }
+
+  .lastReadStarContain {
+    font-size: 12px;
   }
 
   .greet {

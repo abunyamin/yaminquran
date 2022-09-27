@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {
   RiBookOpenLine,
-  RiLightbulbFlashLine,
-  RiUser3Line,
-  RiOpenArmLine,
   RiBookmarkLine,
 } from 'react-icons/ri';
 

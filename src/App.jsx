@@ -25,7 +25,7 @@ export default function App() {
     <>
     <div className="container">
     <Top />
-    {location.pathName == '/' && <Greet />}
+    {location.pathname == '/' && <Greet />}
     {pathName >= 1 && pathName <= 114 ? <Card/> : <LastRead/>}
 
     <Routes> 
