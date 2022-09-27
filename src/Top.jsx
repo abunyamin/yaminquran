@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { RiSearchLine, RiMenu2Fill, RiArrowLeftLine } from 'react-icons/ri';
+import { RiSearchLine, RiHome3Line, RiArrowLeftLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
 import SurahApi from './SurahApi';
 
 function Top(props) {
-  const { surah, loading } = props;
+  const { surah } = props;
   const lokasi = location.pathname;
   const pathName = location.pathname.replace('/', '');
   const [searchButton, setSearchButton] = useState(false);
@@ -108,11 +108,10 @@ function Top(props) {
         );
 
         document.addEventListener('dblclick', (event) => {
-          // event.preventDefault()
+
           div.style.display = 'flex';
         });
       } else {
-        // div.style.position= 'relative'
         div.removeAttribute('style');
       }
     });
@@ -125,7 +124,7 @@ function Top(props) {
           {lokasi === '/' ? (
             <>
               <div className="topIcon">
-                <RiMenu2Fill />
+                <RiHome3Line />
               </div>
             </>
           ) : (
