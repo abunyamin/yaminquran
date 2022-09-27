@@ -24,7 +24,7 @@ const GetApi = Original => {
     }, [loading]);  
 
     return (<>
-    <Original ayat={ayats} surat={ayatSurah} loading={loading} ayatid={...ayat} />
+    <Original ayat={ayats} surat={ayatSurah} loading={loading} />
     </>)
     }
     return Ayat

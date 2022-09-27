@@ -9,27 +9,22 @@ function Card (props){
   const [play, setPlay] = useState(false)
   const [pause, setPause] = useState(false)
 
-  const {surat, loading, ayatid} = props
+  const {surat, loading} = props
   const [mp3, setMp3] = useState('')
-
-  console.log('Card', ayatid)
 
 const audioHandler = () => {
   setPlay(true)
   setPause(false)
   playAudio.current.audio.current.play()
-  console.log('audio play', play)
 }
 
 const audioPause = () => {
   setPause(true)
   playAudio.current.audio.current.pause()
-  console.log('audio pause', pause)
 }
 
 const clickPlay = () => {
   setMp3(surat.audio)
-  console.log('audio play', surat.audio)
 }
 
 
@@ -37,7 +32,6 @@ return (
       <>
       <div className="mp3">     <AudioPlayer
   src={mp3} volume="0.3" autoPlay showDownloadProgress="true" ref={playAudio}
-  onPlay={e => console.log("onPlay")}
 /></div>
 
 {!loading && 

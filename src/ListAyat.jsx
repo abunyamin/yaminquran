@@ -75,7 +75,6 @@ function ListAyat(props) {
   
   },[surat, removeHash()])
 
-  console.log("data bookmark", showData);
 
   return (
     <>
@@ -106,7 +105,6 @@ function ListAyat(props) {
                       <span
                         onClick={() => {
                           localStorage.removeItem("lastread");
-                          console.log("Delete Last Read");
                           forceUpdate();
                         }}
                       >
@@ -123,8 +121,6 @@ function ListAyat(props) {
                               ayat: list.nomor,
                             })
                           );
-                          console.log(lastRead);
-
                           forceUpdate();
                         }}
                       >
@@ -142,7 +138,6 @@ function ListAyat(props) {
                             ayat: list.nomor,
                           })
                         );
-                        console.log(lastRead);
 
                         forceUpdate();
                       }}
@@ -193,9 +188,6 @@ function ListAyat(props) {
                               ])
                             );
 
-                            console.table("Data", showData);
-
-                            console.log("Berhasil dibookmark");
                             forceUpdate();
                           }}
                         >
@@ -223,9 +215,6 @@ function ListAyat(props) {
                             ])
                           );
 
-                          console.table("Data", showData);
-
-                          console.log("Berhasil dibookmark");
                           forceUpdate();
                         }}
                       >

@@ -54,10 +54,6 @@ function Top(props) {
   }
   };
 
-  console.log('select surat', selectSurat)
-  console.log('select ayat', selectAyat)
-  console.log('Button', searchButton)
-
   const suratHandler = (event) => {
     const listOption = event.target.list.querySelector(
       '[value="' + event.target.value + '"]'
@@ -79,7 +75,6 @@ function Top(props) {
       setCountAyat(jumlah_ayat);
     }
 
-    console.log('list option', listOption);
   };
 
   const ayatHandler = (event) => {

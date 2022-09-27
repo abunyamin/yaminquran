@@ -6,11 +6,6 @@ function LastRead (props) {
 
   const data = JSON.parse(localStorage.getItem('lastread')) || null;
 
-  useEffect(() => {
-
-  },[])
-  
-  console.log('Last Read', data)
     return(
     <>
 

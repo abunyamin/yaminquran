@@ -6,7 +6,7 @@ function BookmarkDelete(props, {setIsNotif}) {
   const {detail} = props
   
   let datas = JSON.parse(localStorage.getItem('bookmark')) || [];
-  console.log(detail)
+
     return(<>
   {detail.map((ayat)=> 
     <>
