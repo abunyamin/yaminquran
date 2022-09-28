@@ -15,7 +15,7 @@ const Shalat = () => {
   const date = fulldate.getDate()
   const month = fulldate.getMonth()
   const year = fulldate.getFullYear()
-  const url = `https://api.myquran.com/v1/sholat/jadwal/${dataLokasi || 1301}/${year}/${month}/${date}`
+  const url = `https://api.myquran.com/v1/sholat/jadwal/${idKota? idKota : 1301}/${year}/${month}/${date}`
 
   useEffect(function () {
  
@@ -33,6 +33,8 @@ const Shalat = () => {
     for (const [key, value] of Object.entries(jadwal)) {
       console.log(key, value);
     }
+
+    setIdKota(dataLokasi)
   }, [loading, idKota]);
 
 const submitHandler = async(event) => {    
