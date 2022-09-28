@@ -9,13 +9,13 @@ const Shalat = () => {
   const [loading, setLoading] = useState(true)
   const [jadwal, setJadwal] = useState(false)
   const [lokasi, setLokasi] = useState([])
-  // const [tanggal, setTanggal] = useState(1)
+  let dataLokasi = localStorage.getItem('location')
 
   const fulldate = new Date()
   const date = fulldate.getDate()
   const month = fulldate.getMonth()
   const year = fulldate.getFullYear()
-  const url = `https://api.myquran.com/v1/sholat/jadwal/${idKota}/${year}/${month}/${date}`
+  const url = `https://api.myquran.com/v1/sholat/jadwal/${dataLokasi || 1301}/${year}/${month}/${date}`
 
   useEffect(function () {
  
@@ -29,36 +29,39 @@ const Shalat = () => {
     }
 
     getData();
-  }, [loading]);
+
+    for (const [key, value] of Object.entries(jadwal)) {
+      console.log(key, value);
+    }
+  }, [loading, idKota]);
 
 const submitHandler = async(event) => {    
     event.preventDefault()
     setSubmit(true)
   }
 
-  console.log('tanggal', url)
-  console.log('jadwal', jadwal)
-  console.log('jadwal', lokasi)
+    let jadwalList = []
+    for (const [nama, waktu] of Object.entries(jadwal)) {
+      jadwalList.push(<div className="jadwalItem"><span>{nama}</span> <span>{waktu}</span></div>)
+    }
 
+  console.log('tanggal', url)
+  console.table('jadwal', jadwal)
+  console.log('jadwal', lokasi)
   
   return(<>
-  <form onSubmit={submitHandler}>
+  {/* <form onSubmit={submitHandler}>
     <Kota setIdKota={setIdKota} submit={submit} setSubmit={setSubmit} idKota={idKota} />
     <button>LOKASI</button>
-    </form>
+    </form> */}
     <span>{submit && idKota}</span>
     <div className="jadwal">
-      {Object.keys(jadwal).map((jadwal)=> (<>
-        <div className="jadwalName"><span>Imsak</span> <span>{jadwal.imsak}</span></div>
-        <div className="jadwalName"><span>Subuh</span> <span>{jadwal.subuh}</span></div>
-        <div className="jadwalName"><span>Terbit</span> <span>{jadwal.terbit}</span></div>
-        <div className="jadwalName"><span>Dhuha</span> <span>{jadwal.dhuha}</span></div>
-        <div className="jadwalName"><span>Dzuhur</span> <span>{jadwal.dzuhur}</span></div>
-        <div className="jadwalName"><span>Ashar</span> <span>{jadwal.ashar}</span></div>
-        <div className="jadwalName"><span>Maghrib</span> <span>{jadwal.maghrib}</span></div>
-        <div className="jadwalName"><span>Isya</span> <span>{jadwal.isya}</span></div>
+      {/* {Object.keys(jadwal).map((jadwal)=> (<>
+        <div className="jadwalName"><span>Jadwal</span> <span>{jadwal}</span></div>
 
-      </>))}
+      </>))} */}
+
+{jadwalList}
     </div>
   </>)
 }

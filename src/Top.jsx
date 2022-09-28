@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { RiSearchLine, RiHome3Line, RiArrowLeftLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
 import SurahApi from './SurahApi';
+import Kota from './Kota'
 
 function Top(props) {
   const { surah } = props;
@@ -12,6 +13,7 @@ function Top(props) {
   const [ayatId, setAyatId] = useState(1);
   const [selectSurat, setSelectSurat] = useState(false);
   const [selectAyat, setSelectAyat] = useState(false);
+  const [idKota, setIdKota] = useState(1301);
 
   const navigate = useNavigate();
 
@@ -40,6 +42,9 @@ function Top(props) {
       window.location.href.split('#')[0];
       setSearchButton(false);
 
+    }else if (pathName == 'shalat'){
+      setSearchButton(false);
+      localStorage.setItem('location', idKota)
     }else{
       if (selectSurat && !selectAyat) {
       document.getElementById('inputAyat').focus()
@@ -53,6 +58,8 @@ function Top(props) {
     }
   }
   };
+
+  console.log('ID KOTA', idKota)
 
   const suratHandler = (event) => {
     const listOption = event.target.list.querySelector(
@@ -193,7 +200,7 @@ function Top(props) {
                   {pathName >= 1 ? ayatids2 : ayatids}
                 </datalist>
               </>
-            ) : null}
+            ) : pathName == 'shalat' && <Kota setIdKota={setIdKota} />}
 {pathName != 'bookmark' && <button className="searchIcon" onClick={submitHandler}>
               <RiSearchLine />
             </button> }

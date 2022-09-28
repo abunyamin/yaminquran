@@ -97,13 +97,14 @@ header {
   padding: 8px 4px;
 }
 
-#inputSurat {
+#inputSurat, #inputkota {
   height: 40px;
   max-width: 150px;
   border-radius: 8px;
   border: 1px solid #672cbc;
   padding: 8px 16px;
 }
+
 #suratSearch option {
   max-width: 150px;
 }
@@ -690,11 +691,11 @@ color: #672cbc;
 }
 
 @keyframes bounce {
-    70% { transform:translateY(0%); }
-    80% { transform:translateY(-15%); }
-    90% { transform:translateY(0%); }
-    95% { transform:translateY(-7%); }
-    97% { transform:translateY(0%); }
-    99% { transform:translateY(-3%); }
-    100% { transform:translateY(0); }
+    70% { transform:translateY(0%) scale(1); }
+    80% { transform:translateY(-15%) scale(1.1); }
+    90% { transform:translateY(0%) scale(1); }
+    95% { transform:translateY(-7%) scale(1.08); }
+    97% { transform:translateY(0%) scale(1); }
+    99% { transform:translateY(-3%) scale(1.04); }
+    100% { transform:translateY(0) scale(1); }
 }

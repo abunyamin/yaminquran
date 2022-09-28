@@ -28,7 +28,7 @@ let card = document.getElementById('card')
 
   if(!loading && card){
     console.log(card)
-    card.setAttribute('style', 'animation: bounce 3s ease;')
+    card.setAttribute('style', 'animation: bounce 2s ease;')
   }
 
 const clickPlay = () => {
