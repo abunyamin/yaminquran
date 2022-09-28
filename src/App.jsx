@@ -15,6 +15,7 @@ import ListAyat from './ListAyat'
 import Footer from './Footer'
 import Card from './Card'
 import Bookmark from './Bookmark'
+import Shalat from './Shalat'
 
 export default function App() {
 
@@ -34,6 +35,7 @@ export default function App() {
       <Route path="/" element={<LastRead />} />
       <Route path="/:ayat" element={<ListAyat setSuratApi={setSuratApi}/>} />
       <Route path="/bookmark" element={<Bookmark />} />
+      <Route path="/shalat" element={<Shalat />} />
     </Routes>
     </div> 
     {location.pathname === "/" && <Footer />}

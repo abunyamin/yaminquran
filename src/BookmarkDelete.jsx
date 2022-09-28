@@ -18,7 +18,7 @@ function BookmarkDelete(props, {setIsNotif}) {
         </div>
         <div className="notifDetail">{ayat.nama_latin} ({ayat.surah}) - ayat {ayat.nomor}</div>
       <div className="notifFooter">
-      <button class="buttonDelete"
+      <button className="buttonDelete"
                     onClick={() => {
                       localStorage.setItem(
                         'bookmark',
@@ -34,7 +34,7 @@ function BookmarkDelete(props, {setIsNotif}) {
                       props.setIsNotif(false)
   
                     }}>IYA</button>
-      <button class="buttonClose" onClick={() => props.setIsNotif(false)}>TIDAK</button>
+      <button className="buttonClose" onClick={() => props.setIsNotif(false)}>TIDAK</button>
       </div>
     </div>
     </div>

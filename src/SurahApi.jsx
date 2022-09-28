@@ -1,11 +1,9 @@
 import React, { useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
 
 const SurahApi = Original => {
 
   const Surah = () => {
 
-    const [ayats, setAyats] = useState([]);
     const [surah, setSurah] = useState([]);
     const [loading, setLoading] = useState(true)
 
