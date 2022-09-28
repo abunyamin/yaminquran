@@ -48,9 +48,17 @@ const submitHandler = async(event) => {
     </form>
     <span>{submit && idKota}</span>
     <div className="jadwal">
-      {/* {jadwal.map((jadwal)=> (<>
-        <div className="jadwalName"></div>
-      </>))} */}
+      {Object.keys(jadwal).map((jadwal)=> (<>
+        <div className="jadwalName"><span>Imsak</span> <span>{jadwal.imsak}</span></div>
+        <div className="jadwalName"><span>Subuh</span> <span>{jadwal.subuh}</span></div>
+        <div className="jadwalName"><span>Terbit</span> <span>{jadwal.terbit}</span></div>
+        <div className="jadwalName"><span>Dhuha</span> <span>{jadwal.dhuha}</span></div>
+        <div className="jadwalName"><span>Dzuhur</span> <span>{jadwal.dzuhur}</span></div>
+        <div className="jadwalName"><span>Ashar</span> <span>{jadwal.ashar}</span></div>
+        <div className="jadwalName"><span>Maghrib</span> <span>{jadwal.maghrib}</span></div>
+        <div className="jadwalName"><span>Isya</span> <span>{jadwal.isya}</span></div>
+
+      </>))}
     </div>
   </>)
 }
