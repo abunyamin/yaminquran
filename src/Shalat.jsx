@@ -21,7 +21,6 @@ const forceUpdate = useCallback(() => updatestate({}), []);
 
   useEffect(function () {
 
- 
     async function getData() {
       const url = `https://api.myquran.com/v1/sholat/jadwal/${idKota ? idKota : 1301}/${year}/${month}/${date}`
       const request = await fetch(url);
@@ -34,7 +33,7 @@ const forceUpdate = useCallback(() => updatestate({}), []);
 
     getData();
 
-    setIdKota(dataLokasi)
+
     console.log(lokasi)
     console.log(jadwal)
 
@@ -50,6 +49,7 @@ const forceUpdate = useCallback(() => updatestate({}), []);
   <div className="cardIn">
     <div className="cardHead">
 {lokasi.daerah} - {lokasi.lokasi}</div></div>
+<button onClick={()=>     setIdKota(dataLokasi)}>Simpan Perubahan</button>
 </div>
     <span onClick={()=> {
     console.log('di click')
