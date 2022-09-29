@@ -30,9 +30,9 @@ const Shalat = () => {
 
     getData();
 
-    for (const [key, value] of Object.entries(jadwal)) {
-      console.log(key, value);
-    }
+    // for (const [key, value] of Object.entries(jadwal)) {
+    //   console.log(key, value);
+    // }
 
     setIdKota(dataLokasi)
 
