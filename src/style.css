@@ -97,7 +97,7 @@ header {
   padding: 8px 4px;
 }
 
-#inputSurat, #inputkota {
+#inputSurat {
   height: 40px;
   max-width: 150px;
   border-radius: 8px;
@@ -686,6 +686,7 @@ color: #672cbc;
   padding-top: 10px;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .buttonChange {
@@ -699,10 +700,28 @@ color: #672cbc;
   font-weight: 700;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
 }
 
 .buttonChange:hover {
   background-color: #672cbc;
+}
+
+.locationBody form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#inputkota {
+  height: 40px;
+  max-width: 80%;
+  border-radius: 8px;
+  border: 1px solid #672cbc;
+  padding: 8px 16px;
+  margin: 0 auto;
 }
 
 /*  */

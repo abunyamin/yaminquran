@@ -52,6 +52,7 @@ console.log('idKota', idKota)
    <div className="locationHead">
      <RiMapPin2Line /> LOKASI : {lokasi.lokasi} {idKota ? idKota : dataLokasi} - submit : {submit ? 'true' : 'false'}
    </div>
+   <div className="locationBody">
           <form>
               <input
                   type="text"
@@ -71,6 +72,7 @@ console.log('idKota', idKota)
               setClose(true)}}>KELUAR</button>
             </div>
            </form>
+           </div>
   </div>
   </div>
 </>)
