@@ -51,10 +51,7 @@ const forceUpdate = useCallback(() => updatestate({}), []);
 {lokasi.daerah} - {lokasi.lokasi}</div></div>
 <button onClick={()=>     setIdKota(dataLokasi)}>Simpan Perubahan</button>
 </div>
-    <span onClick={()=> {
-    console.log('di click')
-    // forceUpdate()
-    }}>{idKota} && {dataLokasi}</span>
+
     <div className="jadwal">
 {jadwalList}
     </div>
