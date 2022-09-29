@@ -638,8 +638,11 @@ color: #672cbc;
 
 .jadwalItem {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
+  background-color: #873ed55e;
+  padding: 16px 24px;
+  border-radius: 10px;
 }
 
 .namaWaktu {

@@ -47,6 +47,7 @@ function Top(props) {
     }else if (pathName == 'shalat'){
       setSearchButton(false);
       localStorage.setItem('location', idKota)
+      forceUpdate()
     }else{
       if (selectSurat && !selectAyat) {
       document.getElementById('inputAyat').focus()

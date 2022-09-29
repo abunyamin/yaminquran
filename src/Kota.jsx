@@ -42,6 +42,7 @@ import React, { useState, useEffect} from 'react'
                 <option key={kota.id} data-id={kota.id} value={kota.lokasi} />
                 )}
                 </datalist>
+                {idKota}
 </>)
 }
   </>)
