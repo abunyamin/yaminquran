@@ -34,8 +34,7 @@ function Bookmark() {
             <div className="headAyat">
               <div className="numbAyat">
                 <span>{ayat.noSurat}</span>
-              </div>QS : 
-              {ayat.namaSurat} - {ayat.ayat}
+              </div>QS : {ayat.namaSurat} - {ayat.ayat}
               <div className="more">
                 <span onClick={()=> {
                 setIsNotif(true)
