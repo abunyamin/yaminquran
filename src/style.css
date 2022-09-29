@@ -615,7 +615,7 @@ color: #672cbc;
   cursor: pointer;
 }
 
-.notifFooter .buttonClose {
+.buttonClose {
   background-color: salmon;
   padding: 8px 24px;
   width: 100px;
@@ -626,6 +626,10 @@ color: #672cbc;
   font-weight: 700;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+}
+
+.buttonClose:hover {
+  background-color: rgb(238, 61, 41);
 }
 /* End Bookmark Delete */
 
@@ -676,6 +680,29 @@ color: #672cbc;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.changeButton {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonChange {
+  background-color: #863ed5;
+  padding: 8px 24px;
+  width: 100px;
+  text-align: center;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.buttonChange:hover {
+  background-color: #672cbc;
 }
 
 /*  */

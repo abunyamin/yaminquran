@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react'
+import { RiMapPin2Line } from 'react-icons/ri'
 
-  const Kota = ({setIdKota, submit, idKota, setSubmit, setFixKota, close, setClose}) => {
+  const Kota = ({setIdKota, submit, idKota, setSubmit, setFixKota, close, setClose, lokasi}) => {
 
     const [kota, setKota] = useState([]);
     const [loading, setLoading] = useState(true)
@@ -49,7 +50,7 @@ console.log('idKota', idKota)
  <div className="location">
  <div className="changeLocation">
    <div className="locationHead">
-     Lokasi : {idKota ? idKota : dataLokasi} - submit : {submit ? 'true' : 'false'}
+     <RiMapPin2Line /> LOKASI : {lokasi.lokasi} {idKota ? idKota : dataLokasi} - submit : {submit ? 'true' : 'false'}
    </div>
           <form>
               <input
@@ -64,10 +65,10 @@ console.log('idKota', idKota)
                 )}
                 </datalist>
             <div className="changeButton">
-            <button className="buttonChange" onClick={submitHandler}>UBAH</button>
-            <button onClick={(event) => { 
+            <button className="buttonChange" onClick={submitHandler}>{submit ? 'BERHASIL' : 'UBAH'}</button>
+            <button className="buttonClose" onClick={(event) => { 
               event.preventDefault();
-              setClose(false)}}>KELUAR</button>
+              setClose(true)}}>KELUAR</button>
             </div>
            </form>
   </div>

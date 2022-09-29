@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import Kota from './Kota'
+import { RiSettings4Line } from 'react-icons/ri'
 import useForceUpdate from "use-force-update";
 
 const Shalat = () => {
@@ -11,7 +12,7 @@ const Shalat = () => {
   const [jadwal, setJadwal] = useState(false)
   const [lokasi, setLokasi] = useState([])
   const [close, setClose] = useState(true)
-  let dataLokasi = localStorage.getItem('location')
+  let dataLokasi = localStorage.getItem('location') || 1301
 
   const fulldate = new Date()
   const date = fulldate.getDate()
@@ -50,12 +51,12 @@ setFixKota(lokasi.lokasi)
     }
   
   return(<>
-  {close && <Kota idKota={idKota} setIdKota={setIdKota} submit={submit} setSubmit={setSubmit} fixKota={fixKota} setFixKota={setFixKota} close={close} setClose={setClose} /> }
+  {!close && <Kota idKota={idKota} setIdKota={setIdKota} submit={submit} setSubmit={setSubmit} fixKota={fixKota} setFixKota={setFixKota} close={close} setClose={setClose} lokasi={lokasi} /> }
 
 <div className="card">
   <div className="cardIn">
     <div className="cardHead">
-{lokasi.daerah} - {lokasi.lokasi}</div></div>
+{lokasi.daerah} - {lokasi.lokasi}</div> <span onClick={()=> setClose(false)}><RiSettings4Line /></span></div>
 </div>
 
     <div className="jadwal">
