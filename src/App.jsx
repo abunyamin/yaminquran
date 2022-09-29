@@ -28,7 +28,7 @@ export default function App() {
     <div className="container">
     <Top />
     {location.pathname == '/' && <Greet />}
-    {pathName >= 1 && pathName <= 114 ? <Card/> : <LastRead/>}
+    {pathName >= 1 && pathName <= 114 ? <Card/> : pathName != 'shalat' && <LastRead/>}
 
     <Routes> 
       <Route path="/" element={<ListSurah />} />

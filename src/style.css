@@ -629,6 +629,24 @@ color: #672cbc;
 }
 /* End Bookmark Delete */
 
+/* Jadwal Shalat */
+.jadwal {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.jadwalItem {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.namaWaktu {
+  text-align: left;
+}
+/* End Jadwal Shalat */
+
 /* Breakpoint for Mobile Max 360x634 */
 @media (max-width: 360px) and (max-height: 634px) {
   .container {

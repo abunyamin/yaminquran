@@ -45,22 +45,17 @@ const submitHandler = async(event) => {
 
     let jadwalList = []
     for (const [nama, waktu] of Object.entries(jadwal)) {
-      jadwalList.push(<div className="jadwalItem"><span>{nama}</span> <span>{waktu}</span></div>)
+      jadwalList.push(<div className="jadwalItem"><span className="namaWaktu">{nama}</span> <span className="waktu">{waktu}</span></div>)
     }
 
   
   return(<>
-  {/* <form onSubmit={submitHandler}>
-    <Kota setIdKota={setIdKota} submit={submit} setSubmit={setSubmit} idKota={idKota} />
-    <button>LOKASI</button>
-    </form> */}
+<div className="card">
+
+</div>
+
     <span>{submit && idKota}</span>
     <div className="jadwal">
-      {/* {Object.keys(jadwal).map((jadwal)=> (<>
-        <div className="jadwalName"><span>Jadwal</span> <span>{jadwal}</span></div>
-
-      </>))} */}
-
 {jadwalList}
     </div>
   </>)
