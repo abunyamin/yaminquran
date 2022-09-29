@@ -18,7 +18,9 @@ import React, { useState, useEffect} from 'react'
     }, [loading]);
 
     const submitHandler = event => {
+      event.preventDefault();
       setSubmit(true)
+      localStorage.setItem('location', idKota)
     }
 
     const kotaHandler = (event) => {
