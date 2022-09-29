@@ -17,10 +17,11 @@ import React, { useState, useEffect} from 'react'
       getData();
     }, [loading]);
 
-    const submitHandler = event => {
+    const submitHandler = (event) => {
       event.preventDefault();
-      setSubmit(true)
       localStorage.setItem('location', idKota)
+      setSubmit(true)
+      console.log('SUbmit handler')
     }
 
     const kotaHandler = (event) => {
@@ -41,7 +42,7 @@ import React, { useState, useEffect} from 'react'
    <div className="locationHead">
      Lokasi : {idKota}
    </div>
-          <form onChange={submitHandler}>
+          <form onSubmit={submitHandler}>
               <input
                   type="text"
                   list="namakota"

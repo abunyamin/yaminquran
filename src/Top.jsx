@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { RiSearchLine, RiHome3Line, RiArrowLeftLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
 import SurahApi from './SurahApi';
-import useForceUpdate from "use-force-update";
-import Kota from './Kota'
 
 function Top(props) {
   const { surah } = props;
@@ -14,9 +12,7 @@ function Top(props) {
   const [ayatId, setAyatId] = useState(1);
   const [selectSurat, setSelectSurat] = useState(false);
   const [selectAyat, setSelectAyat] = useState(false);
-  const [idKota, setIdKota] = useState(1301);
 
-  const forceUpdate = useForceUpdate();
   const navigate = useNavigate();
 
   const jumlah_ayat = surah

@@ -51,7 +51,6 @@ const forceUpdate = useCallback(() => updatestate({}), []);
   <div className="cardIn">
     <div className="cardHead">
 {lokasi.daerah} - {lokasi.lokasi}</div></div>
-<button onClick={()=>     setIdKota(dataLokasi)}>Simpan Perubahan</button>
 </div>
 
     <div className="jadwal">
