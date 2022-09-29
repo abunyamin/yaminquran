@@ -44,10 +44,6 @@ function Top(props) {
       window.location.href.split('#')[0];
       setSearchButton(false);
 
-    }else if (pathName == 'shalat'){
-      setSearchButton(false);
-      localStorage.setItem('location', idKota)
-      forceUpdate()
     }else{
       if (selectSurat && !selectAyat) {
       document.getElementById('inputAyat').focus()
@@ -145,7 +141,7 @@ function Top(props) {
           )}
           <div className="topTitle">
             <span>
-              {pathName >= 1 ? nama_surat : pathName == 'bookmark' ? 'Bookmark' : !searchButton && 'YaminQuran' }
+              {pathName >= 1 ? nama_surat : pathName == 'bookmark' ? 'Bookmark' : pathName == 'shalat' ? 'Jadwal Shalat' : !searchButton && 'YaminQuran' }
             </span>
           </div>
         </div>
@@ -188,7 +184,7 @@ function Top(props) {
                   {pathName >= 1 ? ayatids2 : ayatids}
                 </datalist>
               </>
-            ) : pathName >= 1 ? (
+            ) : pathName >= 1 && (
               <>
                 <input
                   type="number"
@@ -200,8 +196,8 @@ function Top(props) {
                   {pathName >= 1 ? ayatids2 : ayatids}
                 </datalist>
               </>
-            ) : pathName == 'shalat' && <Kota setIdKota={setIdKota} />}
-{pathName != 'bookmark' && <button className="searchIcon" onClick={submitHandler}>
+            )}
+{pathName != 'bookmark' && pathName != 'shalat' && <button className="searchIcon" onClick={submitHandler}>
               <RiSearchLine />
             </button> }
           </form>

@@ -17,6 +17,10 @@ import React, { useState, useEffect} from 'react'
       getData();
     }, [loading]);
 
+    const submitHandler = event => {
+      setSubmit(true)
+    }
+
     const kotaHandler = (event) => {
       const listOption = event.target.list.querySelector(
         '[value="' + event.target.value + '"]'
@@ -31,6 +35,11 @@ import React, { useState, useEffect} from 'react'
     return (<>
 {!loading && 
  (<>
+ <div className="changeLocation">
+   <div className="locationHead">
+     Lokasi : {idKota}
+   </div>
+          <form onChange={submitHandler}>
               <input
                   type="text"
                   list="namakota"
@@ -42,7 +51,9 @@ import React, { useState, useEffect} from 'react'
                 <option key={kota.id} data-id={kota.id} value={kota.lokasi} />
                 )}
                 </datalist>
-                {idKota}
+            <button>Simpan Perubahan</button>
+           </form>
+  </div>
 </>)
 }
   </>)
