@@ -4,11 +4,13 @@ import useForceUpdate from "use-force-update";
 
 const Shalat = () => {
 
-  const [idKota, setIdKota] = useState(1301);
+  const [idKota, setIdKota] = useState(false);
+  const [fixKota, setFixKota] = useState(1301);
   const [submit, setSubmit] = useState(false)
   const [loading, setLoading] = useState(true)
   const [jadwal, setJadwal] = useState(false)
   const [lokasi, setLokasi] = useState([])
+  const [close, setClose] = useState(true)
   let dataLokasi = localStorage.getItem('location')
 
   const fulldate = new Date()
@@ -22,7 +24,7 @@ const forceUpdate = useCallback(() => updatestate({}), []);
   useEffect(function () {
 
     async function getData() {
-      const url = `https://api.myquran.com/v1/sholat/jadwal/${dataLokasi ? dataLokasi : 1301}/${year}/${month}/${date}`
+      const url = `https://api.myquran.com/v1/sholat/jadwal/${idKota ? fixKota : dataLokasi}/${year}/${month}/${date}`
       const request = await fetch(url);
       const response = await request.json();
 
@@ -33,11 +35,14 @@ const forceUpdate = useCallback(() => updatestate({}), []);
 
     getData();
 
+setFixKota(lokasi.lokasi)
 
     console.log(lokasi)
     console.log(jadwal)
 
-  }, [loading, idKota]);
+  }, [loading, idKota, fixKota]);
+
+  console.log('fixKota', fixKota)
 
     let jadwalList = []
     for (const [nama, waktu] of Object.entries(jadwal)) {
@@ -45,7 +50,8 @@ const forceUpdate = useCallback(() => updatestate({}), []);
     }
   
   return(<>
-  <Kota idKota={idKota} setIdKota={setIdKota} submit={submit} setSubmit={setSubmit} />
+  {close && <Kota idKota={idKota} setIdKota={setIdKota} submit={submit} setSubmit={setSubmit} fixKota={fixKota} setFixKota={setFixKota} close={close} setClose={setClose} /> }
+
 
 <div className="card">
   <div className="cardIn">

@@ -1,9 +1,10 @@
 import React, { useState, useEffect} from 'react'
 
-  const Kota = ({setIdKota, submit, idKota, setSubmit}) => {
+  const Kota = ({setIdKota, submit, idKota, setSubmit, setFixKota, close, setClose}) => {
 
     const [kota, setKota] = useState([]);
     const [loading, setLoading] = useState(true)
+    let dataLokasi = localStorage.getItem('location')
 
     useEffect(function () {
       async function getData() {
@@ -14,20 +15,27 @@ import React, { useState, useEffect} from 'react'
         setLoading(false)
       }
 
+console.log('idKota', idKota)
       getData();
-    }, [loading]);
+    }, [loading, idKota]);
 
     const submitHandler = (event) => {
       event.preventDefault();
-      localStorage.setItem('location', idKota)
-      setSubmit(true)
-      console.log('SUbmit handler')
+    if(idKota){
+        setSubmit(true)
+        localStorage.setItem('location', idKota)
+        setFixKota(idKota)
+        console.log('Submit handler', submit)
+    }else{
+      document.getElementById('inputkota').focus()
     }
+  }
 
     const kotaHandler = (event) => {
       const listOption = event.target.list.querySelector(
         '[value="' + event.target.value + '"]'
       );
+      setSubmit(false)
 
       if(listOption){
         setIdKota(listOption.dataset.id)
@@ -38,11 +46,12 @@ import React, { useState, useEffect} from 'react'
     return (<>
 {!loading && 
  (<>
+ <div className="location">
  <div className="changeLocation">
    <div className="locationHead">
-     Lokasi : {idKota}
+     Lokasi : {idKota ? idKota : dataLokasi} - submit : {submit ? 'true' : 'false'}
    </div>
-          <form onSubmit={submitHandler}>
+          <form>
               <input
                   type="text"
                   list="namakota"
@@ -54,8 +63,14 @@ import React, { useState, useEffect} from 'react'
                 <option key={kota.id} data-id={kota.id} value={kota.lokasi} />
                 )}
                 </datalist>
-            <button>Simpan Perubahan</button>
+            <div className="changeButton">
+            <button className="buttonChange" onClick={submitHandler}>UBAH</button>
+            <button onClick={(event) => { 
+              event.preventDefault();
+              setClose(true)}}>KELUAR</button>
+            </div>
            </form>
+  </div>
   </div>
 </>)
 }
