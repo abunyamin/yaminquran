@@ -35,7 +35,8 @@ const Shalat = () => {
     }
 
     setIdKota(dataLokasi)
-  }, [loading, idKota]);
+
+  }, [loading, jadwal]);
 
 const submitHandler = async(event) => {    
     event.preventDefault()
@@ -47,9 +48,6 @@ const submitHandler = async(event) => {
       jadwalList.push(<div className="jadwalItem"><span>{nama}</span> <span>{waktu}</span></div>)
     }
 
-  console.log('tanggal', url)
-  console.table('jadwal', jadwal)
-  console.log('jadwal', lokasi)
   
   return(<>
   {/* <form onSubmit={submitHandler}>

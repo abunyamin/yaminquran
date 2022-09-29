@@ -66,7 +66,7 @@ function ListAyat(props) {
     }
     removeHash()
   }
-  
+
     if (!loading && location.hash.includes('#lastread') == true) {
       setTimeout(() => handleLastRead(), 500);
     } else if (!loading && location.hash.includes('#search-') == true){

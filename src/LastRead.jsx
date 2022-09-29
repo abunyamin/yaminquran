@@ -20,7 +20,7 @@ function LastRead (props) {
       <h2>{data.namaSurat}</h2>
       <span>Ayat No : <b>{data.ayat}</b></span>
       </Link></>) : <div className="lastReadStar"> <div className="lastReadStarHead">Keutamaan membaca Al-Quran</div> <div className="lastReadStarContain">“Seorang yang lancar membaca Al Quran akan bersama para malaikat yang mulia dan senantiasa selalu taat kepada Allah, adapun yang membaca Al Quran dan terbata-bata di dalamnya dan sulit atasnya bacaan tersebut maka baginya dua pahala.” </div>
-      (HR: Muslim)
+      (HR : Muslim)
       </div>
     }
     </div>

@@ -61,13 +61,10 @@ function Top(props) {
   }
   };
 
-  console.log('ID KOTA', idKota)
-
   const suratHandler = (event) => {
     const listOption = event.target.list.querySelector(
       '[value="' + event.target.value + '"]'
     );
-
 
     if (listOption) {
       setCountAyat(listOption.dataset.ayat);
