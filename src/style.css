@@ -634,7 +634,7 @@ color: #672cbc;
   display: flex;
   flex-direction: column;
   row-gap: 24px;
-  margin: 0 32px;
+  margin: 32px 0;
 }
 
 .jadwalItem {
