@@ -23,7 +23,7 @@ const forceUpdate = useCallback(() => updatestate({}), []);
 
  
     async function getData() {
-      const url = `https://api.myquran.com/v1/sholat/jadwal/${dataLokasi ? dataLokasi : 1301}/${year}/${month}/${date}`
+      const url = `https://api.myquran.com/v1/sholat/jadwal/${idKota ? idKota : 1301}/${year}/${month}/${date}`
       const request = await fetch(url);
       const response = await request.json();
 
