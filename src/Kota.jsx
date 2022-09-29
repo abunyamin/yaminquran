@@ -67,7 +67,7 @@ console.log('idKota', idKota)
             <button className="buttonChange" onClick={submitHandler}>UBAH</button>
             <button onClick={(event) => { 
               event.preventDefault();
-              setClose(true)}}>KELUAR</button>
+              setClose(false)}}>KELUAR</button>
             </div>
            </form>
   </div>

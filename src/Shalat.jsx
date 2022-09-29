@@ -52,7 +52,6 @@ setFixKota(lokasi.lokasi)
   return(<>
   {close && <Kota idKota={idKota} setIdKota={setIdKota} submit={submit} setSubmit={setSubmit} fixKota={fixKota} setFixKota={setFixKota} close={close} setClose={setClose} /> }
 
-
 <div className="card">
   <div className="cardIn">
     <div className="cardHead">
