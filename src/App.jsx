@@ -5,6 +5,7 @@ import {
   Route,
   useLocation
 } from "react-router-dom";
+import Helmet from 'react-helmet'
 
 //component
 import Top from './Top'
@@ -25,6 +26,10 @@ export default function App() {
   const pathName = location.pathname.replace('/','')
   return (
     <>
+     <Helmet>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+      </Helmet>
     <div className="container">
     <Top />
     {location.pathname == '/' && <Greet />}
