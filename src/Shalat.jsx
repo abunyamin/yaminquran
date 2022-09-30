@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Kota from './Kota';
 import { RiSettings4Fill } from 'react-icons/ri';
-import HijriDate from 'hijri-date';
+import HijrahDate from 'hijrah-date';
 import useForceUpdate from 'use-force-update';
 
 const Shalat = () => {
@@ -19,7 +19,8 @@ const Shalat = () => {
   const month = fulldate.getMonth();
   const year = fulldate.getFullYear();
 
-  const hijri = new HijriDate(1438, 12, 10)
+  let dateH = new Date(1998, 7, 24);
+  let hijrahDate = new HijrahDate(dateH);
 
   const [, updatestate] = useState();
   const forceUpdate = useCallback(() => updatestate({}), []);
@@ -78,7 +79,7 @@ const Shalat = () => {
 
       <div className="jadwalDesc">
         <div className="jadwalDescHead">
-          <span>{hijri}</span>
+          <span></span>
           <span>
             {date} - {month} - {year}
           </span>
