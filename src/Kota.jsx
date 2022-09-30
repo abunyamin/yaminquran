@@ -26,7 +26,8 @@ console.log('idKota', idKota)
         setSubmit(true)
         localStorage.setItem('location', idKota)
         setFixKota(idKota)
-        console.log('Submit handler', submit)
+        document.getElementById('buttonChange').setAttribute('disabled', '')
+        
     }else{
       document.getElementById('inputkota').focus()
     }
@@ -40,7 +41,7 @@ console.log('idKota', idKota)
 
       if(listOption){
         setIdKota(listOption.dataset.id)
-        console.log('kota terpilih', listOption.dataset.id)
+        document.getElementById('buttonChange').removeAttribute('disabled')
     }
   }
 
@@ -66,7 +67,7 @@ console.log('idKota', idKota)
                 )}
                 </datalist>
             <div className="changeButton">
-            <button className="buttonChange" onClick={submitHandler}>{submit ? <RiCheckDoubleLine /> : 'UBAH'}</button>
+            <button className="buttonChange" id="buttonChange" onClick={submitHandler}>{submit ? <RiCheckDoubleLine /> : 'UBAH'}</button>
             <button className="buttonClose" onClick={(event) => { 
               event.preventDefault();
               setClose(true)}}>KELUAR</button>
