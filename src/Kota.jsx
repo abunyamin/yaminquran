@@ -50,7 +50,7 @@ console.log('idKota', idKota)
  <div className="location">
  <div className="changeLocation">
    <div className="locationHead">
-     <RiMapPin2Line /> LOKASI : {lokasi.lokasi} {idKota ? idKota : dataLokasi} - submit : {submit ? 'true' : 'false'}
+     <span><RiMapPin2Line /> LOKASI : </span> {lokasi.lokasi}
    </div>
    <div className="locationBody">
           <form>

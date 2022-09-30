@@ -736,6 +736,10 @@ align-items: center;
   z-index: 999;
 }
 
+.locationHead span {
+  font-weight: 700;
+}
+
 .changeLocation {
   background-color: #ffffff;
   height: 250px;
@@ -744,7 +748,7 @@ align-items: center;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .changeButton {
@@ -789,9 +793,9 @@ align-items: center;
   height: 40px;
   max-width: 80%;
   border-radius: 8px;
-  border: 1px solid #672cbc;
+  border: 3px solid #672cbc;
   padding: 8px 16px;
-  margin: 0 auto;
+  margin: 0 auto 24px;
 }
 
 /*  */
