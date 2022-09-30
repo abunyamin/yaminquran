@@ -666,8 +666,8 @@ color: #672cbc;
       135deg,
       hsla(283, 91%, 79%, 0.8) 20%,
       hsla(261, 57%, 49%, 0.8) 67%
-    );
-  object-fit: contain;
+    ), url(https://i.ibb.co/6Z08jPs/murray-campbell-B-Tdf-GFu-Gw-A-unsplash-1.jpg);
+  object-fit: cover;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

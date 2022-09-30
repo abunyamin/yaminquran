@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   RiBookOpenLine,
   RiBookmarkLine,
+  RiTimerLine
 } from 'react-icons/ri';
 
 class Footer extends Component {
@@ -27,13 +28,13 @@ class Footer extends Component {
               <span>
                 <RiUser3Line />
               </span>
-            </Link>
-            <Link to="/">
+            </Link>  */}
+            <Link to="/shalat">
               {' '}
               <span>
-                <RiOpenArmLine />
+                <RiTimerLine />
               </span>
-            </Link> */}
+            </Link>
             <Link to="/bookmark">
               {' '}
               <span>
