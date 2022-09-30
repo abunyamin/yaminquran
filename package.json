@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "hijrah-date": "^1.0.3",
-    "hijri-date": "^0.2.2",
+    "moment": "^2.29.4",
+    "moment-hijri": "^2.1.2",
+    "moment-islamic-civil": "^1.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-h5-audio-player": "^3.8.4",
     "react-helmet": "6.1.0",
-    "react-hijri": "^0.0.1",
     "react-icons": "4.4.0",
     "react-router-dom": "6.3.0",
     "use-force-update": "^1.0.10"

@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react'
-import { RiMapPin2Line } from 'react-icons/ri'
+import { RiMapPin2Line, RiCheckDoubleLine } from 'react-icons/ri'
 
   const Kota = ({setIdKota, submit, idKota, setSubmit, setFixKota, close, setClose, lokasi}) => {
 
@@ -66,7 +66,7 @@ console.log('idKota', idKota)
                 )}
                 </datalist>
             <div className="changeButton">
-            <button className="buttonChange" onClick={submitHandler}>{submit ? 'BERHASIL' : 'UBAH'}</button>
+            <button className="buttonChange" onClick={submitHandler}>{submit ? <RiCheckDoubleLine /> : 'UBAH'}</button>
             <button className="buttonClose" onClick={(event) => { 
               event.preventDefault();
               setClose(true)}}>KELUAR</button>

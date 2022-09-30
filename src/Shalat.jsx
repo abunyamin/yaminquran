@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Kota from './Kota';
 import { RiSettings4Fill } from 'react-icons/ri';
-import HijrahDate from 'hijrah-date';
+import moment from 'moment-hijri';
 import useForceUpdate from 'use-force-update';
 
 const Shalat = () => {
@@ -12,6 +12,7 @@ const Shalat = () => {
   const [jadwal, setJadwal] = useState(false);
   const [lokasi, setLokasi] = useState([]);
   const [close, setClose] = useState(true);
+
   let dataLokasi = localStorage.getItem('location') || 1301;
 
   const fulldate = new Date();
@@ -19,11 +20,10 @@ const Shalat = () => {
   const month = fulldate.getMonth();
   const year = fulldate.getFullYear();
 
-  let dateH = new Date(1998, 7, 24);
-  let hijrahDate = new HijrahDate(dateH);
-
   const [, updatestate] = useState();
   const forceUpdate = useCallback(() => updatestate({}), []);
+
+  const dateHijri = moment().format('iYYYY/iMMMM/iD')
 
   useEffect(
     function () {
@@ -51,15 +51,15 @@ const Shalat = () => {
 
   console.log('fixKota', fixKota);
 
-  let jadwalList = [];
-  for (const [nama, waktu] of Object.entries(jadwal)) {
-    jadwalList.push(
-      <div className="jadwalItem">
-        <span className="namaWaktu">{nama}</span>{' '}
-        <span className="waktu">{waktu}</span>
-      </div>
-    );
-  }
+  // let jadwalList = [];
+  // for (const [nama, waktu] of Object.entries(jadwal)) {
+  //   jadwalList.push(
+  //     <div className="jadwalItem">
+  //       <span className="namaWaktu">{nama}</span>{' '}
+  //       <span className="waktu">{waktu}</span>
+  //     </div>
+  //   );
+  // }
 
   return (
     <>
@@ -79,9 +79,9 @@ const Shalat = () => {
 
       <div className="jadwalDesc">
         <div className="jadwalDescHead">
-          <span></span>
+          <span>{dateHijri}</span>
           <span>
-            {date} - {month} - {year}
+            {date} / {month} / {year}
           </span>
         </div>
         <div className="jadwalDescBody">
@@ -93,7 +93,24 @@ const Shalat = () => {
           </span>
         </div>
       </div>
-      <div className="jadwal">{jadwalList}</div>
+      <div className="jadwal">
+    <div className="jadwalItem"> <span className="namaWaktu">Imsak</span>
+        <span className="waktu">{jadwal.imsak}</span></div>
+        <div className="jadwalItem"> <span className="namaWaktu">Subuh</span>
+        <span className="waktu">{jadwal.subuh}</span></div>
+        <div className="jadwalItem"> <span className="namaWaktu">Terbit</span>
+        <span className="waktu">{jadwal.terbit}</span></div>
+        <div className="jadwalItem"> <span className="namaWaktu">Dhuha</span>
+        <span className="waktu">{jadwal.dhuha}</span></div>
+        <div className="jadwalItem"> <span className="namaWaktu">Dzuhur</span>
+        <span className="waktu">{jadwal.dzuhur}</span></div>
+        <div className="jadwalItem"> <span className="namaWaktu">Ashar</span>
+        <span className="waktu">{jadwal.ashar}</span></div>
+        <div className="jadwalItem"> <span className="namaWaktu">Maghrib</span>
+        <span className="waktu">{jadwal.maghrib}</span></div>
+        <div className="jadwalItem"> <span className="namaWaktu">Isya</span>
+        <span className="waktu">{jadwal.isya}</span></div>
+      </div>
     </>
   );
 };
