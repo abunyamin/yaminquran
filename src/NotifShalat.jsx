@@ -7,9 +7,10 @@ const NotifShalat = () => {
   const [dateState, setDateState] = useState(new Date());
 
 let dataLokasi = localStorage.getItem('location') || 1301;
+
 const fulldate = new Date();
 const date = fulldate.getDate();
-const month = fulldate.getMonth();
+const month = fulldate.getMonth() + 1;
 const year = fulldate.getFullYear();
 
 let time = dateState.toLocaleString('en-US', {
@@ -34,15 +35,13 @@ useEffect(
 
       setJadwal(response.data.jadwal);
       setLoading(false);
+      console.log(jadwal)
     }
 
     getData();
     setInterval(() => setDateState(new Date()), 1000);
-    
 
   },[]);
-
-  const i = 20;
 
   const shalatCount = (params, count, number) => {
     let shalat = jadwal[params] || '10:10';

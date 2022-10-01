@@ -50,7 +50,7 @@ async componentDidMount() {
 this.state.surahs.map((surah) => 
        (
      <> 
-     <Link to={`/${surah.nomor}`} keys={surah.nomor}>
+     <Link to={`/${surah.nomor}`} key={surah.nomor}>
       <div className="surah">
         <div className="surahIn">
 <div className="numbSurah"><span>{surah.nomor}</span></div>
