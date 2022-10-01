@@ -26,7 +26,7 @@ const audioPause = () => {
 
 let card = document.getElementById('card')
 
-  if(surat.nama_latin && card){
+  if(card){
     console.log(card)
     card.setAttribute('style', 'animation: bounce 2s ease;')
   }
