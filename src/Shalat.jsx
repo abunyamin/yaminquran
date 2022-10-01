@@ -50,9 +50,12 @@ const Shalat = () => {
         setJadwal(response.data.jadwal);
         setLokasi(response.data);
         setLoading(false);
-        console.log(url)
-        console.log('moth', fulldate.getMonth())
-        console.log(fulldate)
+        
+        let jadwalDesc = document.getElementById('jadwalDesc')
+
+        if(jadwalDesc){
+          jadwalDesc.setAttribute('style', 'animation: bounce 2s ease;')
+        }
       }
 
       getData();
@@ -61,6 +64,7 @@ const Shalat = () => {
 
       console.log(lokasi);
       console.log(jadwal);
+
     },
     [loading, idKota, fixKota]
   );
@@ -93,7 +97,7 @@ const Shalat = () => {
         />
       )}
 
-      <div className="jadwalDesc">
+      <div className="jadwalDesc" id="jadwalDesc">
         <div className="jadwalDescHead">
           <span>{iDate[2]} {iMonth} {iDate[0]}</span>
           <span>{time}</span>
