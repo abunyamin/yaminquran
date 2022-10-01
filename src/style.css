@@ -861,6 +861,10 @@ align-items: center;
 padding: 8px 16px;
   }
 
+  .jadwalDescBody span:nth-child(1) {
+    font-size: 18px;
+  }
+
   footer {
     height: 65px;
   }
