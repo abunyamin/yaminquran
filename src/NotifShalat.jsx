@@ -38,6 +38,7 @@ useEffect(
       console.log(jadwal)
     }
 
+
     getData();
     setInterval(() => setDateState(new Date()), 1000);
 
