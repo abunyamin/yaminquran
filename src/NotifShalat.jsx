@@ -68,7 +68,9 @@ useEffect(
 
       if(countTime(time) >= shalatCount(data[i],'-',10) && countTime(time) < shalatCount(data[i])){
         return `${shalatCount(data[i]) - shalatCount(data[i],'-',10)}m sebelum waktu ${data[i]}`;
-      } else if(countTime(time) <= shalatCount(data[i],'+',15)){
+      }
+      
+      if(countTime(time) >= shalatCount(data[i],'+',15) && countTime(time) <= shalatCount(data[i],'+',15)){
         return `Sekarang waktunya ${data[i]}`;
       }
       
