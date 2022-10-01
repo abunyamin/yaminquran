@@ -59,7 +59,7 @@ useEffect(
     for(let i = 0; i <= data.length; i++){
       if(timeNow >= shalatCount(data[i],'-',10) && timeNow < jadwal[data[i]]){
         return `${timeNow - jadwal.imsak}m sebelum waktu ${data[i]}`;
-      }else if(timeNow <= shalatCount(data[i],'+',15)){
+      }else if(timeNow <= shalatCount(data[i],'+',15) && timeNow >= shalatCount(data[i],'+',15)){
         return `Sekarang waktunya ${data[i]}`;
       }
     }
