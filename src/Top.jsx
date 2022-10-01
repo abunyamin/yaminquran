@@ -44,7 +44,7 @@ function Top(props) {
       if (selectSurat && !selectAyat) {
       document.getElementById('inputAyat').focus()
     }else if (searchButton && !selectSurat){
-      document.getElementById('inputSurat').focus()
+      setSearchButton(false);
     }else if (selectSurat && selectAyat){
       navigate(`/${suratId}#search-${ayat}`);
       setSearchButton(false);

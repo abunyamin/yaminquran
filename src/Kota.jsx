@@ -5,7 +5,6 @@ import { RiMapPin2Line, RiCheckDoubleLine } from 'react-icons/ri'
 
     const [kota, setKota] = useState([]);
     const [loading, setLoading] = useState(true)
-    let dataLokasi = localStorage.getItem('location')
 
     useEffect(function () {
       async function getData() {
