@@ -856,6 +856,10 @@ align-items: center;
     margin-bottom: 31px;
   }
 
+  .jadwalDesc {
+padding: 16px 32px;
+  }
+
   footer {
     height: 65px;
   }
