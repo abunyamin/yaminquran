@@ -75,7 +75,7 @@ const NotifShalat = () => {
           countTime(time) < shalatCount(data[i], '+', 0)
         ) {
           return `${
-            shalatCount(data[i], '+', 0) - shalatCount(data[i], '-', 10)
+            shalatCount(data[i], '+', 0) - countTime(time)
           }m sebelum waktu ${data[i]}`;
         } else if (
           countTime(time) >= shalatCount(data[i], '+', 0) &&
