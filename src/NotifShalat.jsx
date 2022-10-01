@@ -19,10 +19,6 @@ let time = dateState.toLocaleString('en-US', {
   hour12: false,
 })
 
-let timeNow = time.split(':')
-
-timeNow = Number(timeNow[0]*60+Number(timeNow[1]))
-
 const [, updatestate] = useState();
 const forceUpdate = useCallback(() => updatestate({}), []);
 
@@ -44,6 +40,17 @@ useEffect(
     }
   },[]);
 
+  // Menghitung parameter waktu menjadi menit
+  // ex: 04:08 mejadi 248
+
+  const countTime = (params) => {
+    let count = params.split(':')
+
+    count = Number(count[0]*60+Number(count[1]))
+
+    return count
+  }
+ 
   const shalatCount = (params, count, number) => {
     let shalat = jadwal[params] || '10:10';
     shalat = shalat.split(':')
@@ -58,11 +65,15 @@ useEffect(
   const jadwalNotif = () => {
   if(jadwal){  
     for(let i = 0; i <= data.length; i++){
-      if(timeNow >= shalatCount(data[i],'-',10) && timeNow < jadwal[data[i]]){
-        return `${timeNow - jadwal.imsak}m sebelum waktu ${data[i]}`;
-      }else if(timeNow <= shalatCount(data[i],'+',30) && timeNow >= shalatCount(data[i],'+',30)){
+
+      if(countTime(time) >= shalatCount(data[i],'-',10) && countTime(time) < shalatCount(data[i])){
+        return `${shalatCount(data[i]) - shalatCount(data[i],'-',10)}m sebelum waktu ${data[i]}`;
+      } else if(countTime(time) <= shalatCount(data[i],'+',15)){
         return `Sekarang waktunya ${data[i]}`;
       }
+      
+      
+      
     }
   }
   }

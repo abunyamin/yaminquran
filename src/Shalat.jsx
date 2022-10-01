@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Kota from './Kota';
 import { RiSettings4Fill } from 'react-icons/ri';
 import moment from 'moment-hijri';
-import Nshalat from './Nshalat';
 import useForceUpdate from 'use-force-update';
 
 const Shalat = () => {
