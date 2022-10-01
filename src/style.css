@@ -137,12 +137,15 @@ header {
 
 .lastRead {
   min-height: 131px;
-  background: linear-gradient(
+  background-image: linear-gradient(
     137deg,
-    rgba(223, 152, 250, 1) 35%,
-    rgba(144, 85, 255, 1) 100%
+    rgba(223, 152, 250, 0.7) 35%,
+    rgba(144, 85, 255, 0.9) 100%
   ), url(https://i.ibb.co/VJWpLz8/tinywow-gr-stocks-s-Ip-Vwr9-Sb-F8-unsplash-6181647.jpg);
-  object-fit: contain;
+    object-fit: contain;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   border-radius: 8px;
   padding: 20px 19px;
   color: #fff;
