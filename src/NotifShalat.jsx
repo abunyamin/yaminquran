@@ -90,11 +90,7 @@ const NotifShalat = () => {
   return (
     <>
       <span>
-        {jadwalNotif() ||
-          'Selamat Datang' +
-            countTime(time) +
-            ' dan ' +
-            shalatCount('subuh', '+', 15)}
+        {jadwalNotif()}
       </span>
     </>
   );
