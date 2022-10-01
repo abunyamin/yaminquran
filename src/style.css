@@ -686,6 +686,10 @@ color: #672cbc;
   font-size: 18px;
 }
 
+.jadwalDescHead span:nth-child(2){
+  text-align: right;
+}
+
 .jadwalDescBody {
 display: flex;
 flex-direction: column;
