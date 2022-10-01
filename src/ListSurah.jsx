@@ -47,10 +47,10 @@ async componentDidMount() {
     <div className="surahList">
 
 {this.state.loading ? <Loading /> :
-this.state.surahs.map((surah) => 
+this.state.surahs.map((surah, index) => 
        (
      <> 
-     <Link to={`/${surah.nomor}`} key={surah.nomor}>
+     <Link to={`/${surah.nomor}`} key={index}>
       <div className="surah">
         <div className="surahIn">
 <div className="numbSurah"><span>{surah.nomor}</span></div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Kota from './Kota';
 import { RiSettings4Fill } from 'react-icons/ri';
 import moment from 'moment-hijri';
+import Nshalat from './Nshalat';
 import useForceUpdate from 'use-force-update';
 
 const Shalat = () => {
@@ -62,27 +63,21 @@ const Shalat = () => {
 
       setFixKota(lokasi.lokasi);
 
-      console.log(lokasi);
-      console.log(jadwal);
-
     },
     [loading, idKota, fixKota]
   );
 
-  console.log('fixKota', fixKota);
+  const data = ['imsak', 'subuh', 'terbit', 'dzuhur', 'ashar', 'maghrib', 'isya']
 
-  // let jadwalList = [];
-  // for (const [nama, waktu] of Object.entries(jadwal)) {
-  //   jadwalList.push(
-  //     <div className="jadwalItem">
-  //       <span className="namaWaktu">{nama}</span>{' '}
-  //       <span className="waktu">{waktu}</span>
-  //     </div>
-  //   );
-  // }
+    let jadwalList = [];
+    for(let i = 0; i <= data.length-1; i++){
+      jadwalList.push(<div className="jadwalItem"> <span className="namaWaktu">{data[i]}</span>
+      <span className="waktu">{jadwal[data[i]]}</span></div>)
+    }
 
   return (
     <>
+    <Nshalat />
       {!close && (
         <Kota
           idKota={idKota}
@@ -112,22 +107,7 @@ const Shalat = () => {
         </div>
       </div>
       <div className="jadwal">
-    <div className="jadwalItem"> <span className="namaWaktu">Imsak</span>
-        <span className="waktu">{jadwal.imsak}</span></div>
-        <div className="jadwalItem"> <span className="namaWaktu">Subuh</span>
-        <span className="waktu">{jadwal.subuh}</span></div>
-        <div className="jadwalItem"> <span className="namaWaktu">Terbit</span>
-        <span className="waktu">{jadwal.terbit}</span></div>
-        <div className="jadwalItem"> <span className="namaWaktu">Dhuha</span>
-        <span className="waktu">{jadwal.dhuha}</span></div>
-        <div className="jadwalItem"> <span className="namaWaktu">Dzuhur</span>
-        <span className="waktu">{jadwal.dzuhur}</span></div>
-        <div className="jadwalItem"> <span className="namaWaktu">Ashar</span>
-        <span className="waktu">{jadwal.ashar}</span></div>
-        <div className="jadwalItem"> <span className="namaWaktu">Maghrib</span>
-        <span className="waktu">{jadwal.maghrib}</span></div>
-        <div className="jadwalItem"> <span className="namaWaktu">Isya</span>
-        <span className="waktu">{jadwal.isya}</span></div>
+        {jadwalList}
       </div>
     </>
   );

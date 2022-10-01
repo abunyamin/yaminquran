@@ -27,7 +27,6 @@ const audioPause = () => {
 let card = document.getElementById('card')
 
   if(card){
-    console.log(card)
     card.setAttribute('style', 'animation: bounce 2s ease;')
   }
 

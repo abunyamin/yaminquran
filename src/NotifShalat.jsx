@@ -35,13 +35,13 @@ useEffect(
 
       setJadwal(response.data.jadwal);
       setLoading(false);
-      console.log(response.data.jadwal)
     }
-
 
     getData();
     setInterval(() => setDateState(new Date()), 1000);
-
+    if(jadwal){
+    console.log('jadwal notif', jadwal)
+    }
   },[]);
 
   const shalatCount = (params, count, number) => {
@@ -52,22 +52,24 @@ useEffect(
     return shalat
   }
 
-  const jadwalNotif = () => {
+  
+  const data = ['imsak', 'subuh', 'terbit', 'dzuhur', 'ashar', 'maghrib', 'isya']
 
-    const data = ['imsak', 'subuh', 'terbit', 'dzuhur', 'ashar', 'maghrib', 'isya']
-    
+  const jadwalNotif = () => {
+  if(jadwal){  
     for(let i = 0; i <= data.length; i++){
       if(timeNow >= shalatCount(data[i],'-',10) && timeNow < jadwal[data[i]]){
         return `${timeNow - jadwal.imsak}m sebelum waktu ${data[i]}`;
-      }else if(timeNow <= shalatCount(data[i],'+',15) && timeNow >= shalatCount(data[i],'+',15)){
+      }else if(timeNow <= shalatCount(data[i],'+',30) && timeNow >= shalatCount(data[i],'+',30)){
         return `Sekarang waktunya ${data[i]}`;
       }
     }
-
+  }
   }
 
 return (<>
   <span>{jadwalNotif() || 'Selamat Datang'}</span>
+  
   </>)
 }
 

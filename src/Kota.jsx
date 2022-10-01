@@ -15,7 +15,6 @@ import { RiMapPin2Line, RiCheckDoubleLine } from 'react-icons/ri'
         setLoading(false)
       }
 
-console.log('idKota', idKota)
       getData();
     }, [loading, idKota]);
 
