@@ -14,7 +14,7 @@ function LastRead (props) {
     {data ?
       (<><div className="lastReadHead">
         <RiBookOpenLine />
-        <span>Last Read</span>
+        <span>Terakhir Baca</span>
       </div>
       <Link to={`/${data.noSurat}#lastread-${data.ayat}`}>
       <h2>{data.namaSurat}</h2>
