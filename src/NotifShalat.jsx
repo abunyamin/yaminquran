@@ -35,7 +35,7 @@ useEffect(
 
       setJadwal(response.data.jadwal);
       setLoading(false);
-      console.log(jadwal)
+      console.log(response.data.jadwal)
     }
 
 
