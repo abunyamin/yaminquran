@@ -79,7 +79,7 @@ const NotifShalat = () => {
           }m sebelum waktu ${data[i]}`;
         }
 
-        if (countTime(time) <= shalatCount(data[i], '+', 15) && countTime(time) >= shalatCount(data[i])) {
+        if (countTime(time) >= shalatCount(data[i],'+', 0) && countTime(time) <= shalatCount(data[i],'+', 9)) {
           return `Sekarang waktunya ${data[i]}`;
         }
       }
@@ -88,7 +88,7 @@ const NotifShalat = () => {
 
   return (
     <>
-      <span>{jadwalNotif() || 'Selamat Datang' + countTime(time) + ' dan ' + shalatCount('imsak', '+', 15)}</span>
+      <span>{jadwalNotif() || 'Selamat Datang' + countTime(time) + ' dan ' + shalatCount('subuh','+', 15)}</span>
     </>
   );
 };
