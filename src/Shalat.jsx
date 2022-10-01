@@ -12,18 +12,31 @@ const Shalat = () => {
   const [jadwal, setJadwal] = useState(false);
   const [lokasi, setLokasi] = useState([]);
   const [close, setClose] = useState(true);
+  
+  const [dateState, setDateState] = useState(new Date());
 
   let dataLokasi = localStorage.getItem('location') || 1301;
 
+  let time = dateState.toLocaleString('id', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+
   const fulldate = new Date();
   const date = fulldate.getDate();
-  const month = fulldate.getMonth();
+  const month = fulldate.getMonth()+1;
   const year = fulldate.getFullYear();
 
   const [, updatestate] = useState();
   const forceUpdate = useCallback(() => updatestate({}), []);
 
-  const dateHijri = moment().format('iYYYY/iMMMM/iD')
+  let dateHijri = moment().format('iYYYY/iMM/iD');
+  let iDate = dateHijri.split('/');
+
+  const hijriMonth = ['Muharram', 'Safar', 'Rabiul awal', 'Rabiul akhi', 'Jumadil awal', 'Jumadil akhir', 'Rajab', 'Syakban', 'Ramadhan', 'Syawal', 'Dzulkaidah', 'Dzulhijjah']
+
+  const iMonth = hijriMonth[parseInt(iDate[1]-1)]
 
   useEffect(
     function () {
@@ -37,6 +50,9 @@ const Shalat = () => {
         setJadwal(response.data.jadwal);
         setLokasi(response.data);
         setLoading(false);
+        console.log(url)
+        console.log('moth', fulldate.getMonth())
+        console.log(fulldate)
       }
 
       getData();
@@ -79,10 +95,8 @@ const Shalat = () => {
 
       <div className="jadwalDesc">
         <div className="jadwalDescHead">
-          <span>{dateHijri}</span>
-          <span>
-            {date} / {month} / {year}
-          </span>
+          <span>{iDate[2]} {iMonth} {iDate[0]}</span>
+          <span>{time}</span>
         </div>
         <div className="jadwalDescBody">
           <span>

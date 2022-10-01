@@ -12,12 +12,15 @@ const date = fulldate.getDate();
 const month = fulldate.getMonth();
 const year = fulldate.getFullYear();
 
-const timeNow = dateState.toLocaleString('en-US', {
+let time = dateState.toLocaleString('en-US', {
   hour: 'numeric',
   minute: 'numeric',
-  second: 'numeric',
-  hour12: true,
+  hour12: false,
 })
+
+let timeNow = time.split(':')
+
+timeNow = Number(timeNow[0]*60+Number(timeNow[1]))
 
 const [, updatestate] = useState();
 const forceUpdate = useCallback(() => updatestate({}), []);
@@ -41,20 +44,30 @@ useEffect(
 
   const i = 20;
 
-  const jadwalNotif = (params) => {
+  const shalatCount = (params, count, number) => {
+    let shalat = jadwal[params] || '10:10';
+    shalat = shalat.split(':')
+    shalat = Number(shalat[0]*60+Number(shalat[1]))
+    shalat = eval(shalat + count + number)
+    return shalat
+  }
 
-    switch(i >= params){
-      case params:
-        return 'Aku';
-      case params:
-        return 'Aku 2';
-      default:
-       return 'Selamat Datang'
+  const jadwalNotif = () => {
+
+    const data = ['imsak', 'subuh', 'terbit', 'dzuhur', 'ashar', 'maghrib', 'isya']
+    
+    for(let i = 0; i <= data.length; i++){
+      if(timeNow >= shalatCount(data[i],'-',10) && timeNow < jadwal[data[i]]){
+        return `${timeNow - jadwal.imsak}m sebelum waktu ${data[i]}`;
+      }else if(timeNow <= shalatCount(data[i],'+',15)){
+        return `Sekarang waktunya ${data[i]}`;
+      }
     }
+
   }
 
 return (<>
-  <span>{jadwalNotif(21)}</span>
+  <span>{jadwalNotif() || 'Selamat Datang'}</span>
   </>)
 }
 
