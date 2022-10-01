@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-const notifShalat = () => {
+const NotifShalat = () => {
 
   const [loading, setLoading] = useState(true);
   const [jadwal, setJadwal] = useState(false);
@@ -35,17 +35,27 @@ useEffect(
 
     getData();
     setInterval(() => setDateState(new Date()), 1000);
+    
 
-    console.log(jadwal);
   },[]);
 
-  const jadwal = () => {
-    console.log('jadwal sekarang')
+  const i = 20;
+
+  const jadwalNotif = (params) => {
+
+    switch(i >= params){
+      case params:
+        return 'Aku';
+      case params:
+        return 'Aku 2';
+      default:
+       return 'Selamat Datang'
+    }
   }
 
 return (<>
-  <span></span>
+  <span>{jadwalNotif(21)}</span>
   </>)
 }
 
-export default notifShalat;
+export default NotifShalat;

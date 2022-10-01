@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NotifShalat from './NotifShalat';
 
 const Greet = () => {
 
@@ -16,9 +17,10 @@ const Greet = () => {
             hour: 'numeric',
             minute: 'numeric',
             second: 'numeric',
-            hour12: true,
+            hour12: false,
           })}
         </h2>
+        <NotifShalat />
       </div>
     </>
   );
