@@ -47,7 +47,7 @@ function Top(props) {
       setSearchButton(false);
     }else if (!selectSurat && !selectAyat){
       setSearchButton(false);
-    }else if (selectSurat && selectAyat){
+    }else if (searchButton && selectSurat && selectAyat){
       navigate(`/${suratId}#search-${ayat}`);
       setSearchButton(false);
       setSelectSurat(false);
