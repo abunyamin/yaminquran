@@ -77,7 +77,6 @@ const Shalat = () => {
 
   return (
     <>
-    <Nshalat />
       {!close && (
         <Kota
           idKota={idKota}

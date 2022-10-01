@@ -28,8 +28,18 @@ const Nshalat = () => {
     []
   );
 
+  const data = ['imsak', 'subuh', 'terbit', 'dzuhur', 'ashar', 'maghrib', 'isya']
+
+  const jadwalNotif = () => {
+    if(jadwal){  
+      for(let i = 0; i <= data.length; i++){
+        if()
+      }
+    }
+    }
+
   return(<>
-  <span>jadwal {jadwal.imsak}</span>
+  <span>jadwal {jadwalNotif()}</span>
   </>)
 }
 
