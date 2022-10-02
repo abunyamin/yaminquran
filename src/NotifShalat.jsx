@@ -81,7 +81,9 @@ const NotifShalat = () => {
           countTime(time) >= shalatCount(data[i], '+', 0) &&
           countTime(time) <= shalatCount(data[i], '+', 9)
         ) {
-          return `Sekarang waktunya ${data[i]}`;
+          return `Sekarang waktunya ${data[i]} | ${shalatCount(data[i], '+', 0)}`;
+        } else if (countTime(time) >= 610){
+          return null
         }
       }
     }
