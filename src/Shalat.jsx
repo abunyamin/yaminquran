@@ -70,7 +70,11 @@ const Shalat = () => {
 
     let jadwalList = [];
     for(let i = 0; i <= data.length-1; i++){
-      jadwalList.push(<div className="jadwalItem"> <span className="namaWaktu">{data[i]}</span>
+
+      let namaWaktu = data[i];
+      namaWaktu = namaWaktu.charAt(0).toUpperCase() + namaWaktu.slice(1);
+
+      jadwalList.push(<div className="jadwalItem"> <span className="namaWaktu">{namaWaktu}</span>
       <span className="waktu">{jadwal[data[i]]}</span></div>)
     }
 
