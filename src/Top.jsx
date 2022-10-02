@@ -139,7 +139,7 @@ function Top(props) {
           )}
           <div className="topTitle">
             <span>
-              {pathName >= 1 ? nama_surat : pathName == 'bookmark' ? 'Penanda Buku' : pathName == 'shalat' ? 'Jadwal Shalat' : !searchButton && 'YaminQuran' }
+              {pathName >= 1 ? nama_surat : pathName == 'bookmark' ? 'Penanda Buku' : pathName == 'shalat' ? 'Jadwal Shalat' : !searchButton && 'YaminQur\'an' }
             </span>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const NotifShalat = () => {
   const [loading, setLoading] = useState(true);
@@ -17,9 +17,6 @@ const NotifShalat = () => {
     minute: 'numeric',
     hour12: false,
   });
-
-  const [, updatestate] = useState();
-  const forceUpdate = useCallback(() => updatestate({}), []);
 
   useEffect(function () {
     async function getData() {
@@ -82,7 +79,7 @@ const NotifShalat = () => {
           countTime(time) >= shalatCount(data[i], '+', 0) &&
           countTime(time) <= shalatCount(data[i], '+', 9)
         ) {
-          return `Sekarang waktunya ${data[i]}`;
+          return `Sekarang waktunya ${data[i]}`; 
         }
       }
     }

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Kota from './Kota';
 import { RiSettings4Fill } from 'react-icons/ri';
 import moment from 'moment-hijri';
-import useForceUpdate from 'use-force-update';
+import Helmet from 'react-helmet'
 
 const Shalat = () => {
   const [idKota, setIdKota] = useState(false);
@@ -80,6 +80,11 @@ const Shalat = () => {
 
   return (
     <>
+    <Helmet>
+      <title>
+        Jadwal Shalat
+        </title>
+    </Helmet>
       {!close && (
         <Kota
           idKota={idKota}

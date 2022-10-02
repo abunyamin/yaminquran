@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   RiShareLine,
   RiBookmarkLine,
@@ -80,10 +80,8 @@ function ListAyat(props) {
     <>
     
     <Helmet>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" rel="hoho" />
       <title>
-        {surat.nama_latin}
+       Baca {surat.nama_latin}
         </title>
       </Helmet>
       <div className="listAyat">
