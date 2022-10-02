@@ -77,12 +77,12 @@ const NotifShalat = () => {
         ) {
           return `${
             shalatCount(data[i], '+', 0) - countTime(time)
-          }m sebelum waktu ${data[i] || 'hampir berkahir Dhuha'}`;
+          }m sebelum waktu ${data[i]}`;
         } else if (
           countTime(time) >= shalatCount(data[i], '+', 0) &&
           countTime(time) <= shalatCount(data[i], '+', 9)
         ) {
-          return `Sekarang waktunya ${data[i] || 'Hampir berakhir Dhuha'}`;
+          return `Sekarang waktunya ${data[i]}`;
         }
       }
     }
