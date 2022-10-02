@@ -9,10 +9,12 @@ import {
   RiTimerFill
 } from 'react-icons/ri';
 
+class Footer extends Component {
+
+  render() {
+    
 const pathName = location.pathname.replace('/','')
 
-class Footer extends Component {
-  render() {
     return (
       <>
         <footer>
