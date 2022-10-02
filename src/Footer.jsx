@@ -8,7 +8,7 @@ import {
   RiTimerLine,
   RiTimerFill
 } from 'react-icons/ri';
-
+ 
 class Footer extends Component {
 
   render() {

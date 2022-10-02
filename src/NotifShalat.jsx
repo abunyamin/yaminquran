@@ -50,7 +50,7 @@ const NotifShalat = () => {
   };
 
   const shalatCount = (params, count, number) => {
-    let shalat = jadwal[params] || '10:10';
+    let shalat = jadwal[params] || jadwal.dzuhur;
     shalat = shalat.split(':');
     shalat = Number(shalat[0] * 60 + Number(shalat[1]));
     shalat = eval(shalat + count + number);
@@ -61,6 +61,7 @@ const NotifShalat = () => {
     'imsak',
     'subuh',
     'terbit',
+    'dhuha',
     'dzuhur',
     'ashar',
     'maghrib',
@@ -76,14 +77,12 @@ const NotifShalat = () => {
         ) {
           return `${
             shalatCount(data[i], '+', 0) - countTime(time)
-          }m sebelum waktu ${data[i]}`;
+          }m sebelum waktu ${data[i] || 'hampir berkahir Dhuha'}`;
         } else if (
           countTime(time) >= shalatCount(data[i], '+', 0) &&
           countTime(time) <= shalatCount(data[i], '+', 9)
         ) {
-          return `Sekarang waktunya ${data[i]} | ${shalatCount(data[i], '+', 0)}`;
-        } else if (countTime(time) >= 610){
-          return null
+          return `Sekarang waktunya ${data[i] || 'Hampir berakhir Dhuha'}`;
         }
       }
     }
