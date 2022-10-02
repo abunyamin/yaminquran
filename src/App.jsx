@@ -43,7 +43,7 @@ export default function App() {
       <Route path="/shalat" element={<Shalat />} />
     </Routes>
     </div> 
-    {location.pathname === "/" && <Footer />}
+    {pathName >= 1 && !pathName <= 114 ? null : <Footer />}
     </>
   );
 }

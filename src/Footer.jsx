@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {
   RiBookOpenLine,
+  RiBookOpenFill,
   RiBookmarkLine,
-  RiTimerLine
+  RiBookmarkFill,
+  RiTimerLine,
+  RiTimerFill
 } from 'react-icons/ri';
+
+const pathName = location.pathname.replace('/','')
 
 class Footer extends Component {
   render() {
@@ -14,7 +19,7 @@ class Footer extends Component {
           <div className="menuBottom">
             <Link to="/">
               <span>
-                <RiBookOpenLine />
+                {location.pathname == '/' ? <RiBookOpenFill /> : <RiBookOpenLine />}
               </span>
             </Link>
             {/* <Link to="/">
@@ -32,13 +37,13 @@ class Footer extends Component {
             <Link to="/shalat">
               {' '}
               <span>
-                <RiTimerLine />
+                {pathName == 'shalat' ? <RiTimerFill /> : <RiTimerLine />}
               </span>
             </Link>
             <Link to="/bookmark">
               {' '}
               <span>
-                <RiBookmarkLine />
+                {pathname == 'bookmark' ? <RiBookmarkLine /> : <RiBookmarkLine />}
               </span>
             </Link>
           </div>

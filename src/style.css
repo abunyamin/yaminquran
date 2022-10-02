@@ -532,6 +532,10 @@ footer {
 
 /* Bookmark */
 
+.bookmark {
+  padding-bottom: 93px;
+}
+
 .notBookmark {
   background-color: hsla(261, 100%, 67%, 0.3);
   border-radius: 10px;
@@ -643,7 +647,7 @@ color: #672cbc;
   flex-direction: column;
   row-gap: 24px;
   margin-top: 32px;
-  padding-bottom: 45px;
+  padding-bottom: 113px;
 }
 
 .jadwalItem {
@@ -863,6 +867,10 @@ align-items: center;
     height: 356px;
     margin-top: 10px;
     margin-bottom: 31px;
+  }
+
+  .jadwal {
+    padding-bottom: 63px;
   }
 
   .jadwalDesc {
