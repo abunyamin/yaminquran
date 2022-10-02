@@ -43,7 +43,7 @@ class Footer extends Component {
             <Link to="/bookmark">
               {' '}
               <span>
-                {pathName == 'bookmark' ? <RiBookmarkLine /> : <RiBookmarkLine />}
+                {pathName == 'bookmark' ? <RiBookmarkFill /> : <RiBookmarkLine />}
               </span>
             </Link>
           </div>
