@@ -11,7 +11,7 @@ const GetApi = Original => {
 
     useEffect(function () {
       async function getData() {
-        const request = await fetch(`https://equran.id/api/surat/${ayat}`);
+        const request = await fetch(`../api/${ayat}.json`);
         const response = await request.json();
   
         setAyats(response.ayat);
