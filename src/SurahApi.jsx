@@ -9,7 +9,7 @@ const SurahApi = Original => {
 
     useEffect(function () {
       async function getData() {
-        const request = await fetch(`https://equran.id/api/surat`);
+        const request = await fetch(`/surat.json`);
         const response = await request.json();
 
         setSurah(response);
