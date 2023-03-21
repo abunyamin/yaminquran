@@ -14,7 +14,7 @@ constructor(props){
 }
 
 async componentDidMount() {
-  const request = await fetch('https://equran.id/api/surat');
+  const request = await fetch('/api/surat.json');
 
   const response = await request.json();
 
